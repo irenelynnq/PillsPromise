@@ -11,5 +11,5 @@ import UIKit
 class IntakeAlarmItem: NSObject {
     var id = ""
     var medicineItem : MedicineItem = MedicineItem()
-    var alarms : [timeval] = []
+    var alarms : [Date] = []
 }
