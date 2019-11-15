@@ -10,7 +10,19 @@ import Foundation
 
 class MedicineList{
     
+    var medicines: [MedicineItem] = []
+    
     init(){
+        let row0Item = MedicineItem()
+        let row1Item = MedicineItem()
+        let row2Item = MedicineItem()
         
+        row0Item.name = "후시딘"
+        row1Item.name = "마데카솔"
+        row2Item.name = "밴드"
+        
+        medicines.append(row0Item)
+        medicines.append(row1Item)
+        medicines.append(row2Item)
     }
 }

@@ -12,7 +12,7 @@ class MedicineItem: NSObject {
     var id = ""
     var name = ""
     var med_info = ""
-    var date_expiration : Date = Date(timeIntervalSince1970: 0)
+    var date_expiration: Date = Date(timeIntervalSince1970: 0)
     var take_info = ""
     var other_info = ""
 }
