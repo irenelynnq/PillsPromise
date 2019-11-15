@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536568237E7C5200A4329C /* AppDelegate.swift */; };
 		AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53656A237E7C5200A4329C /* SceneDelegate.swift */; };
-		AC53656D237E7C5200A4329C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53656C237E7C5200A4329C /* ViewController.swift */; };
 		AC536570237E7C5200A4329C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC53656E237E7C5200A4329C /* Main.storyboard */; };
 		AC536572237E7C5400A4329C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC536571237E7C5400A4329C /* Assets.xcassets */; };
 		AC536575237E7C5400A4329C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC536573237E7C5400A4329C /* LaunchScreen.storyboard */; };
 		AC536580237E7C5500A4329C /* PillsPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53657F237E7C5500A4329C /* PillsPromiseTests.swift */; };
 		AC53658B237E7C5500A4329C /* PillsPromiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */; };
+		AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536598237E8BD800A4329C /* MainTableViewController.swift */; };
+		AC53659B237E8D5100A4329C /* IntakeAlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */; };
+		AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659E237E8EA800A4329C /* MedicineItem.swift */; };
+		AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A0237E8EC900A4329C /* MedicineList.swift */; };
+		AC5365A3237E8EE200A4329C /* IntakeAlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		AC536565237E7C5200A4329C /* PillsPromise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillsPromise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC536568237E7C5200A4329C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC53656A237E7C5200A4329C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC53656C237E7C5200A4329C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC53656F237E7C5200A4329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC536571237E7C5400A4329C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC536574237E7C5400A4329C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		AC536586237E7C5500A4329C /* PillsPromiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillsPromiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsPromiseUITests.swift; sourceTree = "<group>"; };
 		AC53658C237E7C5500A4329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC536598237E8BD800A4329C /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeAlarmItem.swift; sourceTree = "<group>"; };
+		AC53659E237E8EA800A4329C /* MedicineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineItem.swift; sourceTree = "<group>"; };
+		AC5365A0237E8EC900A4329C /* MedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineList.swift; sourceTree = "<group>"; };
+		AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeAlarmList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,15 @@
 			children = (
 				AC536568237E7C5200A4329C /* AppDelegate.swift */,
 				AC53656A237E7C5200A4329C /* SceneDelegate.swift */,
-				AC53656C237E7C5200A4329C /* ViewController.swift */,
 				AC53656E237E7C5200A4329C /* Main.storyboard */,
+				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
 				AC536571237E7C5400A4329C /* Assets.xcassets */,
 				AC536573237E7C5400A4329C /* LaunchScreen.storyboard */,
 				AC536576237E7C5400A4329C /* Info.plist */,
+				AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */,
+				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
+				AC5365A0237E8EC900A4329C /* MedicineList.swift */,
+				AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */,
 			);
 			path = PillsPromise;
 			sourceTree = "<group>";
@@ -259,9 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC53656D237E7C5200A4329C /* ViewController.swift in Sources */,
+				AC53659B237E8D5100A4329C /* IntakeAlarmItem.swift in Sources */,
+				AC5365A3237E8EE200A4329C /* IntakeAlarmList.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
+				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
+				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
 				AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */,
+				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
