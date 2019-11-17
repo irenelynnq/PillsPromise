@@ -32,4 +32,12 @@ class MedicineList{
         medicines.append(item)
         return item
     }
+    
+    func move(item: MedicineItem, to index: Int) {
+        guard let currentIndex = medicines.firstIndex(of: item) else {
+            return
+        }
+        medicines.remove(at: currentIndex)
+        medicines.insert(item, at: index)
+    }
 }

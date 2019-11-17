@@ -9,17 +9,26 @@
 import UIKit
 
 protocol AddItemViewControllerDelegate: class {
-    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: MedicineItem)
+    func addItemViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem)
+    func addItemViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem)
 }
 
-class AddItemViewController: UITableViewController {
+class ItemDetailViewController: UITableViewController {
     weak var delegate: AddItemViewControllerDelegate?
+    weak var medicineList: MedicineList?
+    weak var itemToEdit: MedicineItem?
     
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textfield.text = item.name
+            addBarButton.isEnabled = true
+        }
 
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -30,11 +39,21 @@ class AddItemViewController: UITableViewController {
     }
     @IBAction func done(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        let item = MedicineItem()
-        if let textFieldText = textfield.text {
-            item.name = textFieldText
+        
+        if let item = itemToEdit, let text = textfield.text{
+            item.name = text
+            delegate?.addItemViewController(self, didFinishEditing: item)
+        } else {
+            if let item = medicineList?.newMedicine() {
+                if let textFieldText = textfield.text {
+                    item.name = textFieldText
+                }
+                delegate?.addItemViewController(self, didFinishAdding: item)
+            }
+            
         }
-        delegate?.addItemViewController(self, didFinishAdding: item)
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath?{
@@ -43,7 +62,7 @@ class AddItemViewController: UITableViewController {
 
 }
 
-extension AddItemViewController: UITextFieldDelegate {
+extension ItemDetailViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textfield.resignFirstResponder()
         return false
