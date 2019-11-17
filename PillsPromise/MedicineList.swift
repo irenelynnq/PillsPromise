@@ -25,4 +25,11 @@ class MedicineList{
         medicines.append(row1Item)
         medicines.append(row2Item)
     }
+    
+    func newMedicine() -> MedicineItem {
+        let item = MedicineItem()
+        item.name = "New one"
+        medicines.append(item)
+        return item
+    }
 }
