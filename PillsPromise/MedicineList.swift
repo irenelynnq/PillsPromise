@@ -40,4 +40,12 @@ class MedicineList{
         medicines.remove(at: currentIndex)
         medicines.insert(item, at: index)
     }
+    
+    func remove(items: [MedicineItem]) {
+        for item in items {
+            if let index = medicines.firstIndex(of: item) {
+                medicines.remove(at: index)
+            }
+        }
+    }
 }

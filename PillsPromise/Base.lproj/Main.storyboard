@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbF-45-Pxb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dbF-45-Pxb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,14 +16,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MedicineItem" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dk-lc-Dwn" id="phq-37-IgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-cU-IVY">
-                                            <rect key="frame" x="28" y="11" width="307" height="21"/>
+                                            <rect key="frame" x="28" y="11" width="307" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -48,12 +48,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="약쏙" id="3nZ-5l-Eeh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yua-5N-2Jd">
-                            <connections>
-                                <action selector="addItem:" destination="c3t-YY-y8l" id="k5b-p1-2Xs"/>
-                                <segue destination="UKz-HP-Zzj" kind="show" identifier="AddItemSegue" id="5Us-dK-pz6"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Yua-5N-2Jd">
+                                <connections>
+                                    <action selector="addItem:" destination="c3t-YY-y8l" id="k5b-p1-2Xs"/>
+                                    <segue destination="UKz-HP-Zzj" kind="show" identifier="AddItemSegue" id="5Us-dK-pz6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="Hnz-1w-DJN">
+                                <connections>
+                                    <action selector="deleteItems:" destination="c3t-YY-y8l" id="p4u-dm-gha"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="wWp-1T-HNZ" id="pFH-MW-gCM"/>
@@ -142,7 +149,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="ebB-HC-WNy">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="3T4-JL-sia">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="3T4-JL-sia">
                             <connections>
                                 <action selector="done:" destination="UKz-HP-Zzj" id="7xu-6o-G0u"/>
                             </connections>

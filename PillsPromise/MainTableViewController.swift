@@ -23,6 +23,7 @@ class MainTableViewController: UITableViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
+        mainTableView.allowsMultipleSelectionDuringEditing = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,6 +31,7 @@ class MainTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    /*
     @IBAction func addItem(_ sender: Any) {
         let newRowIndex = medicineList.medicines.count
         _ = medicineList.newMedicine()
@@ -37,6 +39,20 @@ class MainTableViewController: UITableViewController {
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+ */
+    
+    @IBAction func deleteItems(_ sender: Any) {
+        if let selectedRows = mainTableView.indexPathsForSelectedRows {
+            var items = [MedicineItem]()
+            for indexPath in selectedRows {
+                items.append(medicineList.medicines[indexPath.row])
+            }
+            medicineList.remove(items: items)
+            mainTableView.beginUpdates()
+            mainTableView.deleteRows(at: selectedRows, with: .automatic)
+            mainTableView.endUpdates()
+        }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -89,6 +105,7 @@ extension MainTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        /* moving */
         medicineList.move(item: medicineList.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
         tableView.reloadData()
     }
