@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jcQ-CM-fAZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BKe-jA-eWw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ItemDetail-->
-        <scene sceneID="hgr-us-fQH">
-            <objects>
-                <navigationController title="ItemDetail" automaticallyAdjustsScrollViewInsets="NO" id="jcQ-CM-fAZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kmf-w2-QZY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VA5-9l-MH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2069.5652173913045" y="-544.41964285714278"/>
-        </scene>
         <!--Item-->
         <scene sceneID="BIm-JK-u2y">
             <objects>
@@ -44,8 +29,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
-                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="R4o-eG-iKo"/>
-                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="Gxv-9R-Suc"/>
+                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="Zqh-sj-xzn"/>
+                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="pDp-8Q-JMU"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -84,16 +69,34 @@
                     <navigationItem key="navigationItem" title="Item" id="866-qZ-dRh">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="IY9-kp-OnQ">
                             <connections>
-                                <action selector="done:" destination="BKe-jA-eWw" id="a8d-ZI-Mdz"/>
+                                <action selector="done:" destination="BKe-jA-eWw" id="5fi-sl-UMp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addBarButton" destination="IY9-kp-OnQ" id="o94-Pg-Qd0"/>
-                        <outlet property="textfield" destination="pfd-7y-Pyc" id="FUz-0W-L4C"/>
+                        <outlet property="addBarButton" destination="IY9-kp-OnQ" id="F8q-5Z-k0A"/>
+                        <outlet property="textfield" destination="pfd-7y-Pyc" id="h8f-bd-PTc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br8-uv-CN7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3889.8550724637685" y="-544.41964285714278"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="MLl-GE-M19">
+            <objects>
+                <navigationController title="Item" automaticallyAdjustsScrollViewInsets="NO" id="PrJ-w2-EO6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FUC-Vd-rnr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BKe-jA-eWw" kind="relationship" relationship="rootViewController" id="KiM-ku-LxO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaM-c4-CGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2979.7101449275365" y="-544.41964285714278"/>
         </scene>

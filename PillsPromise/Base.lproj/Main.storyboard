@@ -16,14 +16,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MedicineItem" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dk-lc-Dwn" id="phq-37-IgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-cU-IVY">
-                                            <rect key="frame" x="28" y="11" width="307" height="21"/>
+                                            <rect key="frame" x="28" y="11" width="307" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -38,7 +38,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="medicineTextLabel" destination="nbu-cU-IVY" id="pvz-P5-pmj"/>
-                                    <segue destination="D6f-gd-ffd" kind="show" trigger="accessoryAction" id="WfN-t7-gUJ"/>
+                                    <segue destination="Mqi-BO-P3z" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="o5y-5M-pdV"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -52,7 +52,7 @@
                             <barButtonItem systemItem="add" id="Yua-5N-2Jd">
                                 <connections>
                                     <action selector="addItem:" destination="c3t-YY-y8l" id="k5b-p1-2Xs"/>
-                                    <segue destination="D6f-gd-ffd" kind="show" id="MC6-Oe-Utp"/>
+                                    <segue destination="Mqi-BO-P3z" kind="show" identifier="AddItemSegue" id="Qo4-Nb-Sex"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Delete" id="Hnz-1w-DJN">
@@ -202,10 +202,20 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPq-1v-mL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="-544"/>
+            <point key="canvasLocation" x="3372" y="-593"/>
+        </scene>
+        <!--ItemDetail-->
+        <scene sceneID="WYf-Za-voK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ItemDetail" id="Mqi-BO-P3z" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DgH-7h-e42"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWg-cn-fx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="-960"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WfN-t7-gUJ"/>
+        <segue reference="o5y-5M-pdV"/>
     </inferredMetricsTieBreakers>
 </document>
