@@ -56,8 +56,8 @@ class MainTableViewController: UITableViewController {
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: true)
         mainTableView.setEditing(!mainTableView.isEditing, animated: true)
+        super.setEditing(editing, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

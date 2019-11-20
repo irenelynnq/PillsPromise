@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F33082384F6E300799AFB /* ItemDetail.storyboard */; };
+		AC4F330D2384F92400799AFB /* AlarmShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330C2384F92400799AFB /* AlarmShow.storyboard */; };
+		AC4F330F2384F93000799AFB /* ExpirationShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */; };
 		AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536568237E7C5200A4329C /* AppDelegate.swift */; };
 		AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53656A237E7C5200A4329C /* SceneDelegate.swift */; };
 		AC536570237E7C5200A4329C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC53656E237E7C5200A4329C /* Main.storyboard */; };
@@ -15,10 +18,8 @@
 		AC536580237E7C5500A4329C /* PillsPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53657F237E7C5500A4329C /* PillsPromiseTests.swift */; };
 		AC53658B237E7C5500A4329C /* PillsPromiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */; };
 		AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536598237E8BD800A4329C /* MainTableViewController.swift */; };
-		AC53659B237E8D5100A4329C /* IntakeAlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */; };
 		AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659E237E8EA800A4329C /* MedicineItem.swift */; };
 		AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A0237E8EC900A4329C /* MedicineList.swift */; };
-		AC5365A3237E8EE200A4329C /* IntakeAlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */; };
 		AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55603C2381195500C32716 /* ItemDetailViewController.swift */; };
 		ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC814E2381AED400E55287 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC4F33082384F6E300799AFB /* ItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
+		AC4F330C2384F92400799AFB /* AlarmShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmShow.storyboard; sourceTree = "<group>"; };
+		AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpirationShow.storyboard; sourceTree = "<group>"; };
 		AC536565237E7C5200A4329C /* PillsPromise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillsPromise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC536568237E7C5200A4329C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC53656A237E7C5200A4329C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,10 +59,8 @@
 		AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsPromiseUITests.swift; sourceTree = "<group>"; };
 		AC53658C237E7C5500A4329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC536598237E8BD800A4329C /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeAlarmItem.swift; sourceTree = "<group>"; };
 		AC53659E237E8EA800A4329C /* MedicineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineItem.swift; sourceTree = "<group>"; };
 		AC5365A0237E8EC900A4329C /* MedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineList.swift; sourceTree = "<group>"; };
-		AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntakeAlarmList.swift; sourceTree = "<group>"; };
 		AC55603C2381195500C32716 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		ACBC814E2381AED400E55287 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,16 +116,17 @@
 				AC536568237E7C5200A4329C /* AppDelegate.swift */,
 				AC53656A237E7C5200A4329C /* SceneDelegate.swift */,
 				AC53656E237E7C5200A4329C /* Main.storyboard */,
+				AC4F33082384F6E300799AFB /* ItemDetail.storyboard */,
+				AC4F330C2384F92400799AFB /* AlarmShow.storyboard */,
+				AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */,
 				AC55603C2381195500C32716 /* ItemDetailViewController.swift */,
 				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
 				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
 				AC536571237E7C5400A4329C /* Assets.xcassets */,
 				AC536573237E7C5400A4329C /* LaunchScreen.storyboard */,
 				AC536576237E7C5400A4329C /* Info.plist */,
-				AC53659A237E8D5100A4329C /* IntakeAlarmItem.swift */,
 				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
 				AC5365A0237E8EC900A4329C /* MedicineList.swift */,
-				AC5365A2237E8EE200A4329C /* IntakeAlarmList.swift */,
 			);
 			path = PillsPromise;
 			sourceTree = "<group>";
@@ -250,8 +253,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4F330D2384F92400799AFB /* AlarmShow.storyboard in Resources */,
 				AC536575237E7C5400A4329C /* LaunchScreen.storyboard in Resources */,
+				AC4F330F2384F93000799AFB /* ExpirationShow.storyboard in Resources */,
 				AC536572237E7C5400A4329C /* Assets.xcassets in Resources */,
+				AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */,
 				AC536570237E7C5200A4329C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,9 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC53659B237E8D5100A4329C /* IntakeAlarmItem.swift in Sources */,
 				ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */,
-				AC5365A3237E8EE200A4329C /* IntakeAlarmList.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
 				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
 				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
