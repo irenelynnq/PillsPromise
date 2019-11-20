@@ -16,14 +16,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MedicineItem" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dk-lc-Dwn" id="phq-37-IgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-cU-IVY">
-                                            <rect key="frame" x="28" y="11" width="307" height="21.5"/>
+                                            <rect key="frame" x="28" y="11" width="307" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ad-qz-iNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176.8115942028987" y="-544.41964285714278"/>
+            <point key="canvasLocation" x="1025" y="-544"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1Qk-wG-tzD">
@@ -87,7 +87,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJl-Pu-8Gm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1330" y="-544"/>
+            <point key="canvasLocation" x="-1168" y="-544"/>
         </scene>
         <!--Main-->
         <scene sceneID="u7k-FM-iYJ">
@@ -106,7 +106,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HT-Ar-4FV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266.66666666666669" y="-544.41964285714278"/>
+            <point key="canvasLocation" x="128" y="-544"/>
         </scene>
         <!--AlarmShow-->
         <scene sceneID="TPb-6V-d3e">
@@ -116,7 +116,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6df-o4-euZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709" y="-785"/>
+            <point key="canvasLocation" x="-483" y="-765"/>
         </scene>
         <!--ExpirationShow-->
         <scene sceneID="1ap-4c-c0D">
@@ -126,7 +126,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDt-ts-pl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709" y="-375"/>
+            <point key="canvasLocation" x="-464" y="-321"/>
         </scene>
         <!--Item-->
         <scene sceneID="gFK-Az-0Bp">
@@ -202,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPq-1v-mL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-593"/>
+            <point key="canvasLocation" x="2716" y="-544"/>
         </scene>
         <!--ItemDetail-->
         <scene sceneID="WYf-Za-voK">
@@ -212,10 +212,10 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWg-cn-fx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="-960"/>
+            <point key="canvasLocation" x="1925" y="-544"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="o5y-5M-pdV"/>
+        <segue reference="Qo4-Nb-Sex"/>
     </inferredMetricsTieBreakers>
 </document>

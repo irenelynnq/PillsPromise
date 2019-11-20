@@ -16,4 +16,8 @@ class MedicineItem: NSObject {
     var take_info = ""
     var other_info = ""
     var alarms: [Date] = [] //알람 탭에서는 이걸 기준으로 필터해서 보여줍니다
+    
+    func deleteAlarms(){
+        alarms.removeAll()
+    }
 }

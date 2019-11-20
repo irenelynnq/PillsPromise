@@ -29,11 +29,27 @@
                             <outlet property="delegate" destination="4fY-gN-FWx" id="4ca-yT-Vhi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7yv-XO-qms"/>
+                    <navigationItem key="navigationItem" id="7yv-XO-qms">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PPS-Wg-wVT">
+                            <connections>
+                                <segue destination="dFG-kx-SUu" kind="show" id="MO7-rH-T3u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-R0-th5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--ItemDetail-->
+        <scene sceneID="miR-nE-PY4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ItemDetail" id="dFG-kx-SUu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0g5-oy-fDb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73l-1N-FpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="13"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="eQd-b5-8Zg">
