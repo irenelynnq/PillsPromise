@@ -16,14 +16,20 @@ class MedicineList{
         let row0Item = MedicineItem()
         let row1Item = MedicineItem()
         let row2Item = MedicineItem()
+        let row3Item = MedicineItem()
+        let row4Item = MedicineItem()
         
         row0Item.name = "후시딘"
         row1Item.name = "마데카솔"
         row2Item.name = "밴드"
+        row3Item.name = "타이레놀"
+        row4Item.name = "지르텍"
         
         medicines.append(row0Item)
         medicines.append(row1Item)
         medicines.append(row2Item)
+        medicines.append(row3Item)
+        medicines.append(row4Item)
     }
     
     func newMedicine() -> MedicineItem {
