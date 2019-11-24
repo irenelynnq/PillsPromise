@@ -62,17 +62,17 @@ class MainTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddItemSegue"{
-            if let addItemViewController = segue.destination as? ItemDetailViewController {
-                addItemViewController.delegate = self
-                addItemViewController.medicineList = medicineList
+            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
+                itemDetailViewController.delegate = self
+                itemDetailViewController.medicineList = medicineList
             }
         } else if segue.identifier == "EditItemSegue" {
-            if let addItemViewController = segue.destination as? ItemDetailViewController {
+            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
                 if let cell = sender as? UITableViewCell,
                     let indexPath = mainTableView.indexPath(for: cell) {
                     let item = medicineList.medicines[indexPath.row]
-                    addItemViewController.itemToEdit = item
-                    addItemViewController.delegate = self
+                    itemDetailViewController.itemToEdit = item
+                    itemDetailViewController.delegate = self
                 }
             }
         }
@@ -118,11 +118,11 @@ extension MainTableViewController {
     }
 }
 
-extension MainTableViewController: AddItemViewControllerDelegate {
-    func addItemViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem){
+extension MainTableViewController: ItemDetailViewControllerDelegate {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem){
         mainTableView.reloadData()
     }
-    func addItemViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem){
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem){
         mainTableView.reloadData()
     }
 }
