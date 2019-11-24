@@ -21,7 +21,7 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var textfield_name: UITextField!
     @IBOutlet weak var textfield_med_info: UITextField!
     @IBOutlet weak var textfield_take_info: UITextField!
-    //@IBOutlet weak var date_expiration: UIDatePicker!
+    @IBOutlet weak var date_expiration: UILabel!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class ItemDetailViewController: UITableViewController {
             textfield_name.text = item.name
             textfield_med_info.text = item.med_info
             textfield_take_info.text = item.take_info
-            //date_expiration.date = item.date_expiration ?? Date(timeIntervalSinceNow: 900000000000)
+            //date_expiration.text = item.date_expiration ?? Date(timeIntervalSinceNow: 900000000000)
             addBarButton.isEnabled = true
         }
 
