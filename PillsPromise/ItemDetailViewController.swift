@@ -29,6 +29,7 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var deleteExpirationDateButton: UIButton!
     
     var temp_date_expiration: Date?
+    var temp_alarms: [Date] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class ItemDetailViewController: UITableViewController {
             textfield_med_info.text = item.med_info
             textfield_take_info.text = item.take_info
             temp_date_expiration = item.date_expiration
+            temp_alarms = item.alarms
             addBarButton.isEnabled = true
         }
         loadExpirationDate()
@@ -78,6 +80,11 @@ class ItemDetailViewController: UITableViewController {
                 datePickerExpirationViewController.delegate = self
                 datePickerExpirationViewController.dateToEdit = temp_date_expiration
             }
+        } else if segue.identifier == "AlarmDetailSegue" {
+            if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
+                itemDetailAlarmTableViewController.delegate = self
+                itemDetailAlarmTableViewController.alarmList = temp_alarms
+            }
         }
     }
     
@@ -96,6 +103,7 @@ class ItemDetailViewController: UITableViewController {
                 item.take_info = text_take_info
             }
             item.date_expiration = temp_date_expiration
+            item.alarms = temp_alarms
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             if let item = medicineList?.newMedicine() {
@@ -109,6 +117,7 @@ class ItemDetailViewController: UITableViewController {
                     item.take_info = text_take_info
                 }
                 item.date_expiration = temp_date_expiration
+                item.alarms = temp_alarms
                 delegate?.itemDetailViewController(self, didFinishAdding: item)
             }
         }
@@ -148,5 +157,11 @@ extension ItemDetailViewController: DatePickerExpirationViewControllerDelegate {
         temp_date_expiration = date
         loadExpirationDate()
         //itemDetailTableView.reloadData()
+    }
+}
+
+extension ItemDetailViewController: ItemDetailAlarmTableViewControllerDelegate {
+    func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]){
+        temp_alarms = alarms
     }
 }

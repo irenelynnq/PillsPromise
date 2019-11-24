@@ -223,15 +223,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BkE-fK-IXi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="BkE-fK-IXi">
                                         <rect key="frame" x="0.0" y="366" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BkE-fK-IXi" id="qbP-76-Itr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용알람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-BC-Ngv">
-                                                    <rect key="frame" x="30" y="15.5" width="354" height="13"/>
+                                                    <rect key="frame" x="30" y="15.5" width="303" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -244,6 +244,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="tjG-BC-Ngv" secondAttribute="bottom" constant="4.5" id="tRT-Xp-m95"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="g6Y-yo-VlV" kind="show" identifier="AlarmDetailSegue" trigger="accessoryAction" id="BN8-k7-Y9o"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rif-Db-MY0">
                                         <rect key="frame" x="0.0" y="409.5" width="414" height="43.5"/>
@@ -307,6 +310,69 @@
             </objects>
             <point key="canvasLocation" x="3889.8550724637685" y="-544.41964285714278"/>
         </scene>
+        <!--Item Detail Alarm Table View Controller-->
+        <scene sceneID="FhQ-A4-brq">
+            <objects>
+                <tableViewController id="4DR-ON-C5M" customClass="ItemDetailAlarmTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hDC-MJ-AUP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ItemDetailAlarm" id="Yv4-h5-cRM" customClass="ItemDetailAlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yv4-h5-cRM" id="w2k-ha-fix">
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-3p-Fzi">
+                                            <rect key="frame" x="28" y="15.5" width="307" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MEj-3p-Fzi" firstAttribute="top" secondItem="w2k-ha-fix" secondAttribute="topMargin" constant="4.5" id="Djx-0g-tsD"/>
+                                        <constraint firstItem="MEj-3p-Fzi" firstAttribute="leading" secondItem="w2k-ha-fix" secondAttribute="leadingMargin" constant="8" id="Ny1-ZK-bbT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="MEj-3p-Fzi" secondAttribute="bottom" constant="4.5" id="WoP-sq-awX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MEj-3p-Fzi" secondAttribute="trailing" constant="8" id="bAN-tj-zQo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alarmTextLabel" destination="MEj-3p-Fzi" id="Ust-TD-LHD"/>
+                                    <segue destination="cBm-6S-hkB" kind="presentation" identifier="EditAlarmSegue" trigger="accessoryAction" id="GFm-5O-ojp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4DR-ON-C5M" id="5zx-96-jLd"/>
+                            <outlet property="delegate" destination="4DR-ON-C5M" id="Rs3-9x-WwH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="h6e-eA-7be">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="pVM-J9-PoV">
+                                <connections>
+                                    <segue destination="cBm-6S-hkB" kind="presentation" identifier="AddAlarmSegue" id="h8X-fV-ea2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Delete" id="5jc-my-Rxh">
+                                <connections>
+                                    <action selector="deleteAlarms:" destination="4DR-ON-C5M" id="Soi-2P-y7W"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="itemDetailAlarmTableView" destination="hDC-MJ-AUP" id="gBz-QM-u0u"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbn-ax-5qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5866.666666666667" y="50.223214285714285"/>
+        </scene>
         <!--유통기한 설정-->
         <scene sceneID="PVX-mK-KoI">
             <objects>
@@ -362,5 +428,64 @@
             </objects>
             <point key="canvasLocation" x="2979.7101449275365" y="-544.41964285714278"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lD0-EC-Jhp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g6Y-yo-VlV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="UXs-9p-Hpx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cg7-6X-05J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4DR-ON-C5M" kind="relationship" relationship="rootViewController" id="hA7-AM-SDI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEX-qy-Zj5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4956.521739130435" y="49.553571428571423"/>
+        </scene>
+        <!--알람 설정-->
+        <scene sceneID="mNW-cx-EA7">
+            <objects>
+                <viewController title="알람 설정" id="cBm-6S-hkB" customClass="DatePickerAlarmViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aDk-r0-1aF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" translatesAutoresizingMaskIntoConstraints="NO" id="9bp-QR-APa">
+                                <rect key="frame" x="20" y="81" width="374" height="208"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-n2-rkM">
+                                <rect key="frame" x="179" y="297" width="56" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="cBm-6S-hkB" eventType="touchUpInside" id="nTj-yj-WPd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="myJ-l6-zlt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A4v-T1-v9J">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="d1f-ug-2j5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="9bp-QR-APa" id="QVU-oy-pRl"/>
+                        <outlet property="doneButton" destination="bo1-n2-rkM" id="VgI-eT-FaO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ve-D0-AV9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6864" y="50"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GFm-5O-ojp"/>
+    </inferredMetricsTieBreakers>
 </document>
