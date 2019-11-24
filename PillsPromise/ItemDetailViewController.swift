@@ -18,11 +18,17 @@ class ItemDetailViewController: UITableViewController {
     weak var medicineList: MedicineList?
     weak var itemToEdit: MedicineItem?
     
+    @IBOutlet weak var itemDetailTableView: UITableView!
+    
     @IBOutlet weak var textfield_name: UITextField!
     @IBOutlet weak var textfield_med_info: UITextField!
     @IBOutlet weak var textfield_take_info: UITextField!
-    @IBOutlet weak var date_expiration: UILabel!
+    @IBOutlet weak var label_date_expiration: UILabel!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var deleteExpirationDateButton: UIButton!
+    
+    var temp_date_expiration: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +38,32 @@ class ItemDetailViewController: UITableViewController {
             textfield_name.text = item.name
             textfield_med_info.text = item.med_info
             textfield_take_info.text = item.take_info
-            //date_expiration.text = item.date_expiration ?? Date(timeIntervalSinceNow: 900000000000)
+            temp_date_expiration = item.date_expiration
             addBarButton.isEnabled = true
         }
+        loadExpirationDate()
 
         navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func loadExpirationDate(){
+        if let date = temp_date_expiration {
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .long
+            dateformatter.timeStyle = .none
+            label_date_expiration.text = dateformatter.string(from: date)
+            label_date_expiration.isEnabled = true
+            deleteExpirationDateButton.isEnabled = true
+        } else {
+            label_date_expiration.text = "설정 없음"
+            label_date_expiration.isEnabled = false
+            deleteExpirationDateButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func deleteExpirationDate(){
+        temp_date_expiration = nil
+        loadExpirationDate()
     }
     
     func viewWillApper(_ animated: Bool) { //why not override?
@@ -44,6 +71,17 @@ class ItemDetailViewController: UITableViewController {
         //뷰가 나올 때 바로 이 필드를 편집할 수 있게 해줌
         textfield_name.becomeFirstResponder()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "EditDateExpirationSegue"{
+            if let datePickerExpirationViewController = segue.destination as? DatePickerExpirationViewController {
+                datePickerExpirationViewController.delegate = self
+                datePickerExpirationViewController.dateToEdit = temp_date_expiration
+            }
+        }
+    }
+    
+    
     @IBAction func done(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         
@@ -57,6 +95,7 @@ class ItemDetailViewController: UITableViewController {
             if let text_take_info = textfield_take_info.text{
                 item.take_info = text_take_info
             }
+            item.date_expiration = temp_date_expiration
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             if let item = medicineList?.newMedicine() {
@@ -69,6 +108,7 @@ class ItemDetailViewController: UITableViewController {
                 if let text_take_info = textfield_take_info.text{
                     item.take_info = text_take_info
                 }
+                item.date_expiration = temp_date_expiration
                 delegate?.itemDetailViewController(self, didFinishAdding: item)
             }
         }
@@ -101,4 +141,12 @@ extension ItemDetailViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+extension ItemDetailViewController: DatePickerExpirationViewControllerDelegate {
+    func datePickerExpirationViewController(_ controller: DatePickerExpirationViewController, didFinishEditing date: Date){
+        temp_date_expiration = date
+        loadExpirationDate()
+        //itemDetailTableView.reloadData()
+    }
 }

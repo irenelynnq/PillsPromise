@@ -125,25 +125,32 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wal-uj-DZH">
-                                                    <rect key="frame" x="354" y="6" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Add"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wal-uj-DZH">
+                                                    <rect key="frame" x="354" y="4.5" width="30" height="35"/>
+                                                    <state key="normal" title="Edit"/>
                                                     <connections>
-                                                        <segue destination="qEZ-8p-gnv" kind="presentation" id="czd-XM-FbI"/>
+                                                        <segue destination="1L2-Jd-huK" kind="presentation" identifier="EditDateExpirationSegue" id="hV4-uf-clE"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG2-k2-yPe">
-                                                    <rect key="frame" x="285" y="6" width="45" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG2-k2-yPe">
+                                                    <rect key="frame" x="279" y="4.5" width="45" height="35"/>
                                                     <state key="normal" title="Delete"/>
+                                                    <connections>
+                                                        <action selector="deleteExpirationDate" destination="BKe-jA-eWw" eventType="touchUpInside" id="mBh-C7-EvF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SeT-nx-5zd" firstAttribute="leading" secondItem="sKe-Jx-oE2" secondAttribute="leadingMargin" constant="10" id="A7B-f5-Eo7"/>
+                                                <constraint firstAttribute="bottom" secondItem="wal-uj-DZH" secondAttribute="bottom" constant="4.5" id="AFT-b0-nJ8"/>
                                                 <constraint firstItem="SeT-nx-5zd" firstAttribute="top" secondItem="sKe-Jx-oE2" secondAttribute="topMargin" constant="4.5" id="Qbp-jD-VRa"/>
+                                                <constraint firstItem="wal-uj-DZH" firstAttribute="top" secondItem="sKe-Jx-oE2" secondAttribute="top" constant="4.5" id="Vij-a1-ZyW"/>
+                                                <constraint firstItem="dG2-k2-yPe" firstAttribute="top" secondItem="sKe-Jx-oE2" secondAttribute="top" constant="4.5" id="a3u-0N-I6K"/>
+                                                <constraint firstAttribute="bottom" secondItem="dG2-k2-yPe" secondAttribute="bottom" constant="4.5" id="hwj-wb-uZ2"/>
+                                                <constraint firstItem="wal-uj-DZH" firstAttribute="leading" secondItem="dG2-k2-yPe" secondAttribute="trailing" constant="30" id="iFg-d2-aLN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="SeT-nx-5zd" secondAttribute="bottom" constant="4.5" id="p0i-nM-RJS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="SeT-nx-5zd" secondAttribute="trailing" constant="10" id="u9b-Oc-uXT"/>
+                                                <constraint firstAttribute="trailing" secondItem="wal-uj-DZH" secondAttribute="trailing" constant="30" id="wgI-vh-fqy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -154,7 +161,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정 없음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-R6-00y">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-R6-00y">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -288,6 +295,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addBarButton" destination="IY9-kp-OnQ" id="F8q-5Z-k0A"/>
+                        <outlet property="deleteExpirationDateButton" destination="dG2-k2-yPe" id="Rsb-61-hdo"/>
+                        <outlet property="itemDetailTableView" destination="fcu-Qx-UJf" id="bmb-go-U9N"/>
+                        <outlet property="label_date_expiration" destination="Mzb-R6-00y" id="qkT-Ry-ceN"/>
                         <outlet property="textfield_med_info" destination="bI4-3b-bFU" id="Kmr-VP-oxJ"/>
                         <outlet property="textfield_name" destination="qGt-EX-ZWI" id="sDu-6r-kuI"/>
                         <outlet property="textfield_take_info" destination="O54-CE-AfC" id="lJK-eb-4z6"/>
@@ -297,22 +307,26 @@
             </objects>
             <point key="canvasLocation" x="3889.8550724637685" y="-544.41964285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--유통기한 설정-->
         <scene sceneID="PVX-mK-KoI">
             <objects>
-                <viewController id="1L2-Jd-huK" sceneMemberID="viewController">
+                <viewController title="유통기한 설정" id="1L2-Jd-huK" customClass="DatePickerExpirationViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZi-fp-jk9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="N3v-AN-lUa">
-                                <rect key="frame" x="0.0" y="73" width="414" height="216"/>
+                                <rect key="frame" x="20" y="81" width="374" height="208"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-aV-S5m">
-                                <rect key="frame" x="189" y="297" width="37" height="30"/>
+                                <rect key="frame" x="179" y="297" width="56" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="1L2-Jd-huK" eventType="touchUpInside" id="VSY-h1-NU9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -321,10 +335,14 @@
                     <navigationItem key="navigationItem" id="ZNh-Zz-qZc">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Dnb-7L-RlQ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="N3v-AN-lUa" id="4w0-0R-hcf"/>
+                        <outlet property="doneButton" destination="nAK-aV-S5m" id="dbh-PN-xwk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3Q-UA-CS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5681.1594202898559" y="-722.54464285714278"/>
+            <point key="canvasLocation" x="4879.7101449275369" y="-775.44642857142856"/>
         </scene>
         <!--Item-->
         <scene sceneID="MLl-GE-M19">
@@ -343,24 +361,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaM-c4-CGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2979.7101449275365" y="-544.41964285714278"/>
-        </scene>
-        <!--유통기한 설정-->
-        <scene sceneID="jPQ-QE-vyB">
-            <objects>
-                <navigationController title="유통기한 설정" automaticallyAdjustsScrollViewInsets="NO" id="qEZ-8p-gnv" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wam-p7-xNq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="1L2-Jd-huK" kind="relationship" relationship="rootViewController" id="c1Y-VI-ygb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KTh-HH-TfO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4771.0144927536239" y="-722.54464285714278"/>
         </scene>
     </scenes>
 </document>
