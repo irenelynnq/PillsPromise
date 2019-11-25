@@ -9,7 +9,9 @@
 import UIKit
 
 class AlarmTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var AlarmMedicineTextLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
