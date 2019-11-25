@@ -9,9 +9,14 @@
 import UIKit
 
 class AlarmTableViewController: UITableViewController {
+        @IBOutlet weak var AlarmTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = editButtonItem
+        AlarmTableView.allowsMultipleSelectionDuringEditing = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
