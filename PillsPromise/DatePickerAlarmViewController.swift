@@ -10,13 +10,13 @@ import UIKit
 
 protocol DatePickerAlarmViewControllerDelegate: class {
     func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishAdding alarm: Date)
-    func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishEditing alarm: Date)
+    func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishEditing alarm: Date, at index: Int)
 }
 
 class DatePickerAlarmViewController: UIViewController {
     weak var delegate: DatePickerAlarmViewControllerDelegate?
-    var alarmList: [Date]?
     var alarmToEdit: Date?
+    var editAt: Int?
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var doneButton: UIButton!
@@ -30,13 +30,12 @@ class DatePickerAlarmViewController: UIViewController {
             datePicker.date = Date()
         }
     }
+    
     @IBAction func done(_ sender: Any) {
         if let alarm = alarmToEdit {
-            alarmToEdit! = datePicker.date
-            delegate?.datePickerAlarmViewController(self, didFinishEditing: alarmToEdit!)
+            delegate?.datePickerAlarmViewController(self, didFinishEditing: datePicker.date, at: editAt!)
         } else {
             let alarm = datePicker.date
-            alarmList!.append(alarm)
             delegate?.datePickerAlarmViewController(self, didFinishAdding: alarm)
         }
         

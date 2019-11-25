@@ -44,7 +44,6 @@ class ItemDetailViewController: UITableViewController {
             addBarButton.isEnabled = true
         }
         loadExpirationDate()
-
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -84,6 +83,8 @@ class ItemDetailViewController: UITableViewController {
             if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
                 itemDetailAlarmTableViewController.delegate = self
                 itemDetailAlarmTableViewController.alarmList = temp_alarms
+            } else {
+                print("Hi")
             }
         }
     }

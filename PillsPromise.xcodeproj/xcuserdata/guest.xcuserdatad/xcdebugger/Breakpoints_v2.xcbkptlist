@@ -3,4 +3,273 @@
    uuid = "EF0675DE-28B9-4FDA-8ADE-169FDE261291"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6599825C-0890-4325-A95B-8827A33A8E0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailAlarmTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D35BD8D-BCC5-4752-B8CB-6007D0425FDB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "ItemDetailViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B7E1593-8056-4740-843E-7AB4899003E8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "ItemDetailViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - 3107916526cd40fc"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.temp_alarms.getter : Swift.Array&lt;Foundation.Date&gt;"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - 7050809a59569008"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.temp_alarms.setter : Swift.Array&lt;Foundation.Date&gt;"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - e3a06445a359cf9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.temp_alarms.modify : Swift.Array&lt;Foundation.Date&gt;"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - 82df2f949711bdae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.temp_alarms.modify : Swift.Array&lt;Foundation.Date&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - 6f9349ea23e3cd66"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.init(style: __C.UITableViewStyle) -&gt; PillsPromise.ItemDetailViewController"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1538">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - 40adfa62be8bf9e6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PillsPromise.ItemDetailViewController"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1415">
+               </Location>
+               <Location
+                  uuid = "6B7E1593-8056-4740-843E-7AB4899003E8 - f57da5c44c5f0987"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PillsPromise.ItemDetailViewController&gt;"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42F099C9-D936-49C5-8805-28797C078666"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "21492713-3FA9-47BD-9E22-6C2FF227DF0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1B0FDA6-A75B-4BFC-B466-572341F7CB86"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CE2D675-0FCC-431D-BB17-786BA2474FF1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDBBE928-0B40-47AF-9473-5BC478972D1F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "502CC786-6768-462D-A71D-390234B58BC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3319B6CE-1DF6-4182-BDA1-48706C23303D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "prepare(for:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

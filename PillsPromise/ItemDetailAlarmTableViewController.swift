@@ -34,7 +34,7 @@ class ItemDetailAlarmTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItems?.append(editButtonItem)
         itemDetailAlarmTableView.allowsMultipleSelectionDuringEditing = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +69,6 @@ class ItemDetailAlarmTableViewController: UITableViewController {
         if segue.identifier == "AddAlarmSegue"{
             if let datePickerAlarmViewController = segue.destination as? DatePickerAlarmViewController {
                 datePickerAlarmViewController.delegate = self
-                datePickerAlarmViewController.alarmList = alarmList
             }
         } else if segue.identifier == "EditAlarmSegue" {
             if let datePickerAlarmViewController = segue.destination as? DatePickerAlarmViewController {
@@ -78,15 +77,21 @@ class ItemDetailAlarmTableViewController: UITableViewController {
                     let alarm = alarmList[indexPath.row]
                     datePickerAlarmViewController.alarmToEdit = alarm
                     datePickerAlarmViewController.delegate = self
+                    datePickerAlarmViewController.editAt = indexPath.row
                 }
             }
         }
+    }
+    
+    @IBAction func done(_ sender: Any) {
+        delegate?.itemDetailAlarmTableViewController(self, didFinishEditing: alarmList)
+        //self.presentingViewController?.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 
 }
 
 extension ItemDetailAlarmTableViewController {
-    //UITableViewDelegate, UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return alarmList.count
     }
@@ -118,10 +123,14 @@ extension ItemDetailAlarmTableViewController {
 
 extension ItemDetailAlarmTableViewController: DatePickerAlarmViewControllerDelegate {
     func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishAdding alarm: Date) {
+        alarmList.append(alarm)
         itemDetailAlarmTableView.reloadData()
     }
     
-    func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishEditing alarm: Date) {
+    func datePickerAlarmViewController(_ controller: DatePickerAlarmViewController, didFinishEditing alarm: Date, at index: Int) {
+        alarmList.remove(at: index)
+        alarmList.insert(alarm, at: index)
         itemDetailAlarmTableView.reloadData()
+        
     }
 }

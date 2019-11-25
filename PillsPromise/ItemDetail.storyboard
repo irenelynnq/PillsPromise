@@ -245,7 +245,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="g6Y-yo-VlV" kind="show" identifier="AlarmDetailSegue" trigger="accessoryAction" id="BN8-k7-Y9o"/>
+                                            <segue destination="4DR-ON-C5M" kind="show" identifier="AlarmDetailSegue" trigger="accessoryAction" id="aHG-bN-xZf"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Rif-Db-MY0">
@@ -320,14 +320,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ItemDetailAlarm" id="Yv4-h5-cRM" customClass="ItemDetailAlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="52"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="52.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yv4-h5-cRM" id="w2k-ha-fix">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-3p-Fzi">
-                                            <rect key="frame" x="28" y="15.5" width="307" height="21"/>
+                                            <rect key="frame" x="28" y="15.5" width="307" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -353,6 +353,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="h6e-eA-7be">
                         <rightBarButtonItems>
+                            <barButtonItem title="Done" id="vHB-M3-IIv">
+                                <connections>
+                                    <action selector="done:" destination="4DR-ON-C5M" id="GWG-o2-t1d"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="pVM-J9-PoV">
                                 <connections>
                                     <segue destination="cBm-6S-hkB" kind="presentation" identifier="AddAlarmSegue" id="h8X-fV-ea2"/>
@@ -487,5 +492,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="GFm-5O-ojp"/>
+        <segue reference="aHG-bN-xZf"/>
     </inferredMetricsTieBreakers>
 </document>
