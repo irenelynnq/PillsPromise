@@ -24,6 +24,7 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var textfield_med_info: UITextField!
     @IBOutlet weak var textfield_take_info: UITextField!
     @IBOutlet weak var label_date_expiration: UILabel!
+    @IBOutlet weak var textfield_other_info: UITextField!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
     @IBOutlet weak var deleteExpirationDateButton: UIButton!
@@ -40,6 +41,7 @@ class ItemDetailViewController: UITableViewController {
             textfield_med_info.text = item.med_info
             textfield_take_info.text = item.take_info
             temp_date_expiration = item.date_expiration
+            textfield_other_info.text = item.other_info
             temp_alarms = item.alarms
             addBarButton.isEnabled = true
         }
@@ -83,8 +85,6 @@ class ItemDetailViewController: UITableViewController {
             if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
                 itemDetailAlarmTableViewController.delegate = self
                 itemDetailAlarmTableViewController.alarmList = temp_alarms
-            } else {
-                print("Hi")
             }
         }
     }
@@ -100,8 +100,11 @@ class ItemDetailViewController: UITableViewController {
             if let text_med_info = textfield_med_info.text {
                 item.med_info = text_med_info
             }
-            if let text_take_info = textfield_take_info.text{
+            if let text_take_info = textfield_take_info.text {
                 item.take_info = text_take_info
+            }
+            if let text_other_info = textfield_other_info.text {
+                item.other_info = text_other_info
             }
             item.date_expiration = temp_date_expiration
             item.alarms = temp_alarms
@@ -116,6 +119,9 @@ class ItemDetailViewController: UITableViewController {
                 }
                 if let text_take_info = textfield_take_info.text{
                     item.take_info = text_take_info
+                }
+                if let text_other_info = textfield_other_info.text {
+                    item.other_info = text_other_info
                 }
                 item.date_expiration = temp_date_expiration
                 item.alarms = temp_alarms

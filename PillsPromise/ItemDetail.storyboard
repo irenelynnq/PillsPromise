@@ -52,8 +52,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
-                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="DGM-3R-CUE"/>
-                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="6hg-Yk-Pbl"/>
+                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="MKt-zZ-YaF"/>
+                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="teO-3V-drx"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -98,10 +98,6 @@
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="uwv-r0-QuG"/>
-                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="x1G-gf-p8d"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -209,10 +205,6 @@
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                                                    <connections>
-                                                        <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="qfq-j1-WXc"/>
-                                                        <outlet property="delegate" destination="BKe-jA-eWw" id="rlP-bI-bWE"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -255,22 +247,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wDm-6F-emw">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                    <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Tj-9Z-JfM">
-                                                            <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Tj-9Z-JfM" id="5UD-rD-Fmr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </tableViewCellContentView>
-                                                        </tableViewCell>
-                                                    </prototypes>
-                                                </tableView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-up-00c">
+                                                    <rect key="frame" x="30" y="15.5" width="354" height="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PkO-up-00c" secondAttribute="trailing" constant="10" id="dUY-PV-eyi"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PkO-up-00c" secondAttribute="bottom" constant="4.5" id="l3T-Hy-6m5"/>
+                                                <constraint firstItem="PkO-up-00c" firstAttribute="top" secondItem="DzN-iE-PjR" secondAttribute="topMargin" constant="4.5" id="wdV-Qe-hcD"/>
+                                                <constraint firstItem="PkO-up-00c" firstAttribute="leading" secondItem="DzN-iE-PjR" secondAttribute="leadingMargin" constant="10" id="yla-V4-im4"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hrG-C7-mr3">
@@ -279,6 +268,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrG-C7-mr3" id="8RY-aC-9DQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-vC-LIv">
+                                                    <rect key="frame" x="20" y="4.5" width="374" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="u6P-vC-LIv" secondAttribute="bottom" constant="4.5" id="D41-m9-2FY"/>
+                                                <constraint firstItem="u6P-vC-LIv" firstAttribute="leading" secondItem="8RY-aC-9DQ" secondAttribute="leading" constant="20" id="F9X-B4-cHg"/>
+                                                <constraint firstItem="u6P-vC-LIv" firstAttribute="top" secondItem="8RY-aC-9DQ" secondAttribute="top" constant="4.5" id="nCs-uY-P2x"/>
+                                                <constraint firstAttribute="trailing" secondItem="u6P-vC-LIv" secondAttribute="trailing" constant="20" id="udQ-kx-9xq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -303,6 +305,7 @@
                         <outlet property="label_date_expiration" destination="Mzb-R6-00y" id="qkT-Ry-ceN"/>
                         <outlet property="textfield_med_info" destination="bI4-3b-bFU" id="Kmr-VP-oxJ"/>
                         <outlet property="textfield_name" destination="qGt-EX-ZWI" id="sDu-6r-kuI"/>
+                        <outlet property="textfield_other_info" destination="u6P-vC-LIv" id="yff-dT-KtL"/>
                         <outlet property="textfield_take_info" destination="O54-CE-AfC" id="lJK-eb-4z6"/>
                     </connections>
                 </tableViewController>
