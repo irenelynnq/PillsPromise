@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		722C20D3238BE3BE00ADD6E7 /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */; };
+		722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */; };
 		AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F33082384F6E300799AFB /* ItemDetail.storyboard */; };
 		AC4F330D2384F92400799AFB /* AlarmShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330C2384F92400799AFB /* AlarmShow.storyboard */; };
 		AC4F330F2384F93000799AFB /* ExpirationShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
+		722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		AC4F33082384F6E300799AFB /* ItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		AC4F330C2384F92400799AFB /* AlarmShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmShow.storyboard; sourceTree = "<group>"; };
 		AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpirationShow.storyboard; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 				AC53656E237E7C5200A4329C /* Main.storyboard */,
 				AC4F33082384F6E300799AFB /* ItemDetail.storyboard */,
 				AC4F330C2384F92400799AFB /* AlarmShow.storyboard */,
+				722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */,
+				722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */,
 				AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */,
 				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
 				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
@@ -296,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */,
+				722C20D3238BE3BE00ADD6E7 /* AlarmTableViewController.swift in Sources */,
 				AC5201A4238ACD4200E6F42E /* DatePickerExpirationViewController.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
 				AC5201AA238AEC3B00E6F42E /* DatePickerAlarmViewController.swift in Sources */,
@@ -305,6 +312,7 @@
 				AC5201A6238AE25A00E6F42E /* ItemDetailAlarmTableViewController.swift in Sources */,
 				AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */,
 				AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */,
+				722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */,
 				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
