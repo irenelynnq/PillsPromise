@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FD71C8C238BE03E001CE667 /* ExpirationShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */; };
+		2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */; };
 		AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F33082384F6E300799AFB /* ItemDetail.storyboard */; };
 		AC4F330D2384F92400799AFB /* AlarmShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330C2384F92400799AFB /* AlarmShow.storyboard */; };
 		AC4F330F2384F93000799AFB /* ExpirationShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewController.swift; sourceTree = "<group>"; };
+		2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewCell.swift; sourceTree = "<group>"; };
 		AC4F33082384F6E300799AFB /* ItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		AC4F330C2384F92400799AFB /* AlarmShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmShow.storyboard; sourceTree = "<group>"; };
 		AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpirationShow.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				AC4F33082384F6E300799AFB /* ItemDetail.storyboard */,
 				AC4F330C2384F92400799AFB /* AlarmShow.storyboard */,
 				AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */,
+				2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */,
+				2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */,
 				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
 				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
 				AC5201A3238ACD4200E6F42E /* DatePickerExpirationViewController.swift */,
@@ -289,11 +295,13 @@
 				ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */,
 				AC5201A4238ACD4200E6F42E /* DatePickerExpirationViewController.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
+				2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */,
 				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
 				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
 				AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */,
 				AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */,
 				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,
+				2FD71C8C238BE03E001CE667 /* ExpirationShowTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,30 +6,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Expiration-->
+        <!--Expiration Show Table View Controller-->
         <scene sceneID="Bn0-b2-Lqf">
             <objects>
-                <tableViewController title="Expiration" id="9vL-Mh-53B" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CWB-sL-AFb">
+                <tableViewController title="Expiration" id="9vL-Mh-53B" userLabel="Expiration Show Table View Controller" customClass="ExpirationShowTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CWB-sL-AFb" userLabel="Expiration Show Table View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gxo-Cp-pbo">
+                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="left" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicineItem" id="Gxo-Cp-pbo" customClass="ExpirationShowTableViewCell" customModule="PillsPromise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gxo-Cp-pbo" id="RJN-0m-ah4">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CIq-Dp-TBS" userLabel="Expiration Text Label">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expirationTextLabel" destination="CIq-Dp-TBS" id="gu5-sG-YiF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="9vL-Mh-53B" id="JMK-KB-P6R"/>
-                            <outlet property="delegate" destination="9vL-Mh-53B" id="eQ8-iq-XHN"/>
+                            <outlet property="dataSource" destination="9vL-Mh-53B" id="7kI-Lv-kdy"/>
+                            <outlet property="delegate" destination="9vL-Mh-53B" id="ILe-HV-0e5"/>
+                            <outlet property="prefetchDataSource" destination="9vL-Mh-53B" id="pFT-UF-a9B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ret-Ec-EKx"/>
+                    <navigationItem key="navigationItem" id="uoX-cA-XJ4"/>
+                    <connections>
+                        <outlet property="expirationShowTableView" destination="CWB-sL-AFb" id="Qt4-eK-9Iv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bum-qY-l6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
