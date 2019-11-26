@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="1024.6376811594205" y="-544.41964285714278"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="1Qk-wG-tzD">
             <objects>
-                <tabBarController id="IDA-7I-xpq" sceneMemberID="viewController">
+                <tabBarController id="IDA-7I-xpq" customClass="TabBarViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xFR-6c-HcF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

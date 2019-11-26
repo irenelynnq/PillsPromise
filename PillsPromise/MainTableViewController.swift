@@ -11,16 +11,18 @@ import UIKit
 class MainTableViewController: UITableViewController {
     @IBOutlet weak var mainTableView: UITableView!  
     
-    var medicineList: MedicineList
+    var medicineList: MedicineList?
     
+    /*
     required init?(coder: NSCoder) {
         medicineList = MedicineList()
         super.init(coder: coder)
     }
+ */
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        medicineList = SingletoneMedicineList.shared.medicineList
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         mainTableView.allowsMultipleSelectionDuringEditing = true
@@ -46,9 +48,9 @@ class MainTableViewController: UITableViewController {
         if let selectedRows = mainTableView.indexPathsForSelectedRows {
             var items = [MedicineItem]()
             for indexPath in selectedRows {
-                items.append(medicineList.medicines[indexPath.row])
+                items.append(medicineList!.medicines[indexPath.row])
             }
-            medicineList.remove(items: items)
+            medicineList?.remove(items: items)
             mainTableView.beginUpdates()
             mainTableView.deleteRows(at: selectedRows, with: .automatic)
             mainTableView.endUpdates()
@@ -70,7 +72,7 @@ class MainTableViewController: UITableViewController {
             if let itemDetailViewController = segue.destination as? ItemDetailViewController {
                 if let cell = sender as? UITableViewCell,
                     let indexPath = mainTableView.indexPath(for: cell) {
-                    let item = medicineList.medicines[indexPath.row]
+                    let item = medicineList?.medicines[indexPath.row]
                     itemDetailViewController.itemToEdit = item
                     itemDetailViewController.delegate = self
                 }
@@ -83,13 +85,13 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController {
     //UITableViewDelegate, UITableViewDataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return medicineList.medicines.count
+        return medicineList!.medicines.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /* cell을 tableView에 띄워 주는 함수 */
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
         
-        let item = medicineList.medicines[indexPath.row]
+        let item = medicineList!.medicines[indexPath.row]
         configureText(for: cell, with: item)
         
         return cell
@@ -99,14 +101,14 @@ extension MainTableViewController {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         /* swipe delete */
-        medicineList.medicines.remove(at: indexPath.row)
+        medicineList?.medicines.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         /* moving */
-        medicineList.move(item: medicineList.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
+        medicineList?.move(item: medicineList!.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
         tableView.reloadData()
     }
     

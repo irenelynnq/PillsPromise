@@ -27,6 +27,8 @@
 		AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659E237E8EA800A4329C /* MedicineItem.swift */; };
 		AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A0237E8EC900A4329C /* MedicineList.swift */; };
 		AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55603C2381195500C32716 /* ItemDetailViewController.swift */; };
+		AC6EB501238D765100D214D0 /* SingletonMedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */; };
+		AC6EB503238D791E00D214D0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EB502238D791E00D214D0 /* TabBarViewController.swift */; };
 		ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC814E2381AED400E55287 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		AC53659E237E8EA800A4329C /* MedicineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineItem.swift; sourceTree = "<group>"; };
 		AC5365A0237E8EC900A4329C /* MedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineList.swift; sourceTree = "<group>"; };
 		AC55603C2381195500C32716 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
+		AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonMedicineList.swift; sourceTree = "<group>"; };
+		AC6EB502238D791E00D214D0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		ACBC814E2381AED400E55287 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,10 +144,12 @@
 				AC5201A5238AE25A00E6F42E /* ItemDetailAlarmTableViewController.swift */,
 				AC5201A7238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift */,
 				AC5201A9238AEC3B00E6F42E /* DatePickerAlarmViewController.swift */,
+				AC6EB502238D791E00D214D0 /* TabBarViewController.swift */,
 				AC536571237E7C5400A4329C /* Assets.xcassets */,
 				AC536573237E7C5400A4329C /* LaunchScreen.storyboard */,
 				AC536576237E7C5400A4329C /* Info.plist */,
 				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
+				AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */,
 				AC5365A0237E8EC900A4329C /* MedicineList.swift */,
 			);
 			path = PillsPromise;
@@ -306,6 +312,7 @@
 				AC5201A4238ACD4200E6F42E /* DatePickerExpirationViewController.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
 				AC5201AA238AEC3B00E6F42E /* DatePickerAlarmViewController.swift in Sources */,
+				AC6EB501238D765100D214D0 /* SingletonMedicineList.swift in Sources */,
 				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
 				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
 				AC5201A8238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift in Sources */,
@@ -313,6 +320,7 @@
 				AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */,
 				AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */,
 				722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */,
+				AC6EB503238D791E00D214D0 /* TabBarViewController.swift in Sources */,
 				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
