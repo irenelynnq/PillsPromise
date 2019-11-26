@@ -116,6 +116,8 @@ extension MainTableViewController {
             medicineCell.medicineTextLabel.text = item.name
         }
     }
+    
+
 }
 
 extension MainTableViewController: ItemDetailViewControllerDelegate {

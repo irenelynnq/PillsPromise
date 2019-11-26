@@ -10,6 +10,15 @@ import UIKit
 
 class ExpirationShowTableViewCell: UITableViewCell {
 
+    var viewModel: MedicineItem? {
+        didSet {
+            if let viewModel = viewModel {
+                expirationTextLabel.text = "\(viewModel.name)"
+
+            }
+        }
+    }
+    
     @IBOutlet weak var expirationTextLabel: UILabel!
     
     override func awakeFromNib() {

@@ -50,3 +50,28 @@ class MedicineItem: NSObject {
         alarms.removeAll()
     }
 }
+
+extension MedicineItem {
+    var isExpirationOrLeftMonthItem: Bool {
+                
+        // 유통기한 오늘기준 지난거
+        let expired = date_expiration! < Date()
+        
+        // 오늘기준 30일 남은 거
+        let monthLater = Date().adding(day: 30)
+        let leftOneMonth = date_expiration! < monthLater
+        
+        if expired || leftOneMonth {
+            return true
+            
+        } else {
+            return false
+        }
+    }
+}
+
+extension Date {
+    func adding(day: Int) -> Date {
+        return Calendar.current.date(byAdding: .day, value: day, to: self)!
+    }
+}

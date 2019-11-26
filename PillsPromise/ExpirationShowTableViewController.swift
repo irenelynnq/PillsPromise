@@ -9,137 +9,48 @@
 import UIKit
 
 class ExpirationShowTableViewController: UITableViewController {
-    
-    @IBOutlet weak var expirationShowTableView: UITableView!
-    
-    var medicineList: MedicineList
-    
-    required init?(coder: NSCoder) {
-        medicineList = MedicineList()
+
+    // Fetched data list
+    var medicineList : MedicineList = MedicineList()
         
-        super.init(coder: coder)
+    // Use for tableview
+    var medicines: [MedicineItem] {
+        // Computed Property
+        // 한달 필터링
+        let medicines = self.medicineList.medicines.filter { $0.isExpirationOrLeftMonthItem }
+        return medicines
+    }
+
+    @IBOutlet weak var expirationShowTableView: UITableView! {
+        didSet {
+            // set up
+            expirationShowTableView.delegate = self
+            expirationShowTableView.dataSource = self
+            expirationShowTableView.separatorStyle = .none
+            expirationShowTableView.rowHeight = UITableView.automaticDimension
+            expirationShowTableView.estimatedRowHeight = 128.0
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    
 }
 
 extension ExpirationShowTableViewController {
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return medicineList.medicines.count
+        return medicines.count
     }
     
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        /*
-         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "MedicineItem")
-         cell.textLabel?.text = medicineList[indexPath.row]
-        */
-        
-        /*
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
-        
-        let item = medicineList.medicines[indexPath.row]
-        configureText(for: cell, with: item)
-        */
-        
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
-        
-        /*
-        
-        let format = DateFormatter()
-        format.dateFormat = "yyyy/MM/dd HH:mm:ss"
-        let today = format.string(from: )(Date())
-        let dateformatter = DateFormatter()
-        
-        if medicineList.medicines[indexPath.row].date_expiration_string != "설정 없음" {
-
-            let startDate = dateformatter.date(from:medicineList.medicines[indexPath.row].date_expiration_string)!
-            let endDate = dateformatter.date(from:today)!
-
-            let interval = endDate.timeIntervalSince(startDate)
-            let days = Int(interval / 86400)
+        if let cell: ExpirationShowTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath) as? ExpirationShowTableViewCell {
+            cell.selectionStyle = .none
+            cell.viewModel = medicines[indexPath.row]
             
-            if let label = cell.viewWithTag(1000) as? UILabel {
-            
-                if days <= 30 {
-                    label.text = medicineList.medicines[indexPath.row].name
-                    */
-                    let item = medicineList.medicines[indexPath.row]
-                    configureText(for: cell, with: item)
-                    
-                    return cell
-                }
-                
-            }
-           /*
+            return cell
         }
         
-        
-        return cell
-        
+        return UITableViewCell()
     }
- */
-    
-    func configureText(for cell: UITableViewCell, with item: MedicineItem) {
-        /* cell의 text를 출력하는 함수 */
-        if let medicineCell = cell as? ExpirationShowTableViewCell {
-            medicineCell.expirationTextLabel.text = item.name
-        }
-        
-        
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-
