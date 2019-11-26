@@ -9,19 +9,32 @@
         <!--Alarm-->
         <scene sceneID="RjR-Ie-9CD">
             <objects>
-                <tableViewController title="Alarm" id="4fY-gN-FWx" sceneMemberID="viewController">
+                <tableViewController title="Alarm" id="4fY-gN-FWx" customClass="AlarmTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mum-14-Fkm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="R9b-0F-PdN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmMedicineItem" id="R9b-0F-PdN" customClass="AlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9b-0F-PdN" id="ADi-44-HiE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKL-Tj-saG">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="AlarmMedicineTextLabel" destination="bKL-Tj-saG" id="Wpk-jf-bZg"/>
+                                    <segue destination="dFG-kx-SUu" kind="show" trigger="accessoryAction" id="1B3-OP-flH"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -29,13 +42,16 @@
                             <outlet property="delegate" destination="4fY-gN-FWx" id="4ca-yT-Vhi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7yv-XO-qms">
+                    <navigationItem key="navigationItem" title="약쏙" id="7yv-XO-qms">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PPS-Wg-wVT">
                             <connections>
                                 <segue destination="dFG-kx-SUu" kind="show" id="MO7-rH-T3u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="AlarmTableView" destination="mum-14-Fkm" id="JeV-M7-0eF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-R0-th5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +65,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73l-1N-FpY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692" y="13"/>
+            <point key="canvasLocation" x="1741" y="130"/>
         </scene>
         <!--Alarm-->
         <scene sceneID="eQd-b5-8Zg">
@@ -70,4 +86,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MO7-rH-T3u"/>
+    </inferredMetricsTieBreakers>
 </document>
