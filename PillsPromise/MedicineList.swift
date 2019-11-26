@@ -20,10 +20,15 @@ class MedicineList{
         let row4Item = MedicineItem()
         
         row0Item.name = "후시딘"
+        row0Item.med_info = "연고"
         row1Item.name = "마데카솔"
-        row2Item.name = "밴드"
+        row1Item.med_info = "연고"
+        row2Item.name = "뽀로로밴드"
+        row2Item.med_info = "상처났을 때"
         row3Item.name = "타이레놀"
+        row3Item.med_info = "진통제"
         row4Item.name = "지르텍"
+        row4Item.med_info = "알레르기약"
         
         medicines.append(row0Item)
         medicines.append(row1Item)

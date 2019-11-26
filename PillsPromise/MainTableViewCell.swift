@@ -11,6 +11,8 @@ import UIKit
 class MainTableViewCell: UITableViewCell {
     
     @IBOutlet weak var medicineTextLabel: UILabel!
+    @IBOutlet weak var medicineExpirationLabel: UILabel!
+    @IBOutlet weak var medicineInfoLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

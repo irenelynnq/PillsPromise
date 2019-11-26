@@ -115,6 +115,12 @@ extension MainTableViewController {
         if let medicineCell = cell as? MainTableViewCell {
             medicineCell.medicineTextLabel.text = item.name
         }
+        if let medicineCell = cell as? MainTableViewCell {
+            medicineCell.medicineExpirationLabel.text = item.date_expiration_string
+        }
+        if let medicineCell = cell as? MainTableViewCell {
+            medicineCell.medicineInfoLabel.text = item.med_info
+        }
     }
 }
 
