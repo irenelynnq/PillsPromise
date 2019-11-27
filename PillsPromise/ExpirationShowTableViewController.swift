@@ -10,9 +10,12 @@ import UIKit
 
 class ExpirationShowTableViewController: UITableViewController {
 
-    // Fetched data list
-    var medicineList : MedicineList = MedicineList()
-        
+    // 데이터 가져왔어요
+    var medicineList : MedicineList {
+        return SingletoneMedicineList.shared.medicineList
+    }
+    
+    //아래 medicines는 필요 없어요
     // Use for tableview
     var medicines: [MedicineItem] {
         // Computed Property
@@ -20,7 +23,37 @@ class ExpirationShowTableViewController: UITableViewController {
         let medicines = self.medicineList.medicines.filter { $0.isExpirationOrLeftMonthItem }
         return medicines
     }
-
+    
+    //아래의 두 배열들 사용해서 섹션 나눠서 프린트해주세요. 유통기한도 나와야 해요
+    //유통기한 지난 것
+    var medicines_expired: [MedicineItem] {
+        let medicines = medicineList.medicines.filter {
+            if let date_ex = $0.date_expiration{
+                return (date_ex < Date())
+            } else {
+                return false
+            }
+        }
+        return medicines
+    }
+    
+    //한달 남은 것
+    var medicines_month: [MedicineItem] {
+        let medicines = medicineList.medicines.filter {
+            if let date_ex = $0.date_expiration {
+                if date_ex >= Date() && date_ex < Date().adding(day: 30){
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }
+        return medicines
+    }
+ 
+    
     @IBOutlet weak var expirationShowTableView: UITableView! {
         didSet {
             // set up
