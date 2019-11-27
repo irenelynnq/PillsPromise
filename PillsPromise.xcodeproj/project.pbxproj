@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		722C20D3238BE3BE00ADD6E7 /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */; };
 		722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */; };
+		2FD71C8C238BE03E001CE667 /* ExpirationShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */; };
+		2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */; };
 		AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F33082384F6E300799AFB /* ItemDetail.storyboard */; };
 		AC4F330D2384F92400799AFB /* AlarmShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330C2384F92400799AFB /* AlarmShow.storyboard */; };
 		AC4F330F2384F93000799AFB /* ExpirationShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewController.swift; sourceTree = "<group>"; };
+		2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewCell.swift; sourceTree = "<group>"; };
 		AC4F33082384F6E300799AFB /* ItemDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemDetail.storyboard; sourceTree = "<group>"; };
 		AC4F330C2384F92400799AFB /* AlarmShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmShow.storyboard; sourceTree = "<group>"; };
 		AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpirationShow.storyboard; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */,
 				722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */,
 				AC4F330E2384F93000799AFB /* ExpirationShow.storyboard */,
+				2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */,
+				2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */,
 				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
 				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
 				AC55603C2381195500C32716 /* ItemDetailViewController.swift */,
@@ -313,6 +319,7 @@
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
 				AC5201AA238AEC3B00E6F42E /* DatePickerAlarmViewController.swift in Sources */,
 				AC6EB501238D765100D214D0 /* SingletonMedicineList.swift in Sources */,
+				2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */,
 				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
 				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
 				AC5201A8238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift in Sources */,
@@ -322,6 +329,7 @@
 				722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */,
 				AC6EB503238D791E00D214D0 /* TabBarViewController.swift in Sources */,
 				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,
+				2FD71C8C238BE03E001CE667 /* ExpirationShowTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

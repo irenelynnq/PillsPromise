@@ -30,6 +30,17 @@ class MedicineList{
         row4Item.name = "지르텍"
         row4Item.med_info = "알레르기약"
         
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier:"ko_KR")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        row0Item.date_expiration = formatter.date(from: "2019-11-10")
+        row1Item.date_expiration = formatter.date(from: "2020-07-07")
+        row2Item.date_expiration = formatter.date(from: "2018-01-19")
+        row3Item.date_expiration = formatter.date(from: "2019-12-20")
+        row4Item.date_expiration = formatter.date(from: "2020-02-05")
+        
+        
         medicines.append(row0Item)
         medicines.append(row1Item)
         medicines.append(row2Item)
