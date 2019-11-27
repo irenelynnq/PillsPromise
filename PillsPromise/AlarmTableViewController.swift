@@ -10,6 +10,12 @@ import UIKit
 
 class AlarmTableViewController: UITableViewController {
         @IBOutlet weak var AlarmTableView: UITableView!
+    
+    var medicineList: MedicineList {
+        return SingletoneMedicineList.shared.medicineList
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

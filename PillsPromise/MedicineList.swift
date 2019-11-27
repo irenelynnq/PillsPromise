@@ -40,6 +40,17 @@ class MedicineList{
         row3Item.date_expiration = formatter.date(from: "2019-12-20")
         row4Item.date_expiration = formatter.date(from: "2020-02-05")
         
+        let alarmsformatter = DateFormatter()
+        alarmsformatter.locale = Locale(identifier:"ko_KR")
+        alarmsformatter.dateFormat = "hh:mm"
+        
+        
+        row0Item.alarms.append(alarmsformatter.date(from: "21:40")!)
+        row1Item.alarms.append(alarmsformatter.date(from: "12:00")!)
+        row2Item.alarms.append(alarmsformatter.date(from: "09:20")!)
+        row3Item.alarms.append(alarmsformatter.date(from: "10:10")!)
+
+        
         
         medicines.append(row0Item)
         medicines.append(row1Item)
