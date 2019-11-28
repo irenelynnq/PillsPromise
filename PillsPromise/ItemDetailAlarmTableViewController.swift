@@ -34,7 +34,6 @@ class ItemDetailAlarmTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItems?.append(editButtonItem)
         itemDetailAlarmTableView.allowsMultipleSelectionDuringEditing = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,6 +42,7 @@ class ItemDetailAlarmTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    /*
     @IBAction func deleteAlarms(_ sender: Any) {
         if let selectedRows = itemDetailAlarmTableView.indexPathsForSelectedRows {
             var dates = [Date]()
@@ -59,11 +59,8 @@ class ItemDetailAlarmTableViewController: UITableViewController {
             itemDetailAlarmTableView.endUpdates()
         }
     }
+    */
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        itemDetailAlarmTableView.setEditing(!itemDetailAlarmTableView.isEditing, animated: true)
-        super.setEditing(editing, animated: true)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AddAlarmSegue"{
