@@ -366,11 +366,6 @@
                                     <segue destination="cBm-6S-hkB" kind="presentation" identifier="AddAlarmSegue" id="h8X-fV-ea2"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Delete" id="5jc-my-Rxh">
-                                <connections>
-                                    <action selector="deleteAlarms:" destination="4DR-ON-C5M" id="Soi-2P-y7W"/>
-                                </connections>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
