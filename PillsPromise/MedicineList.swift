@@ -42,7 +42,7 @@ class MedicineList{
         
         let alarmsformatter = DateFormatter()
         alarmsformatter.locale = Locale(identifier:"ko_KR")
-        alarmsformatter.dateFormat = "hh:mm"
+        alarmsformatter.dateFormat = "HH:mm"
         
         
         row0Item.alarms.append(alarmsformatter.date(from: "21:40")!)
