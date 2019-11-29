@@ -43,12 +43,6 @@ class ExpirationShowTableViewController: UITableViewController {
     }
     
     let sections: [String] = ["유통기한 만료", "유통기한 임박"]
-    
-    /*
-    private func priorityForSectionIndex(_ index: Int) -> MedicineList.Priority? {
-        return MedicineList.Priority(rawValue: index)
-    }
-    */
  
     
     @IBOutlet weak var expirationShowTableView: UITableView! {
@@ -71,17 +65,17 @@ class ExpirationShowTableViewController: UITableViewController {
 
 extension ExpirationShowTableViewController {
     
-    // Returns the number of sections.
+    // Returns the number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
     
-    // Returns the title of the section.
+    // Returns the title of the section
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section]
     }
     
-    // Called when Cell is selected.
+    // Called when Cell is selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
@@ -96,7 +90,7 @@ extension ExpirationShowTableViewController {
         
     }
     
-    // Returns the total number of arrays to display in the table.
+    // Returns the total number of arrays to display in the table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
@@ -112,7 +106,7 @@ extension ExpirationShowTableViewController {
         
     }
     
-    // Set a value in Cell.
+    // Set a value in Cell
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
@@ -138,58 +132,15 @@ extension ExpirationShowTableViewController {
 
     
     func configureText(for cell: UITableViewCell, with item: MedicineItem) {
-        /* cell의 text를 출력하는 함수 */
+        
         if let medicineCell = cell as? ExpirationShowTableViewCell {
             medicineCell.expirationTextLabel.text = item.name
         }
-        /*
+
         if let medicineCell = cell as? ExpirationShowTableViewCell {
             medicineCell.expirationDateTextLabel.text = item.date_expiration_string
         }
- */
 
-    
-
- /*
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let priority = priorityForSectionIndex(section) {
-            return medicines_expired.count + medicines_month.count
-        } else {
-            return 0
-        }
     }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
-        
-        if let priority = priorityForSectionIndex(indexPath.section) {
-            let item = medicineList.medicineList(for: priority)[indexPath.row]
-            configureText(for cell, with: item)
-        }
-        
-        return cell
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return priorityForSectionIndex(section)?.title
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell: ExpirationShowTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath) as? ExpirationShowTableViewCell {
-            cell.selectionStyle = .none
-            cell.viewModel = medicineList.medicines[indexPath.row]
-            
-            return cell
-        }
-        
-        return UITableViewCell()
-    }
-        */
-    }
-    
-
     
 }

@@ -20,6 +20,7 @@ class ExpirationShowTableViewCell: UITableViewCell {
     }
     
     @IBOutlet weak var expirationTextLabel: UILabel!
+    @IBOutlet weak var expirationDateTextLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

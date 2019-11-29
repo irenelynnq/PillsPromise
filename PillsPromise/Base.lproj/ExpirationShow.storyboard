@@ -10,39 +10,46 @@
         <scene sceneID="Bn0-b2-Lqf">
             <objects>
                 <tableViewController title="Expiration" id="9vL-Mh-53B" userLabel="Expiration Show Table View Controller" customClass="ExpirationShowTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CWB-sL-AFb" userLabel="Expiration Show Table View">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="35" sectionFooterHeight="35" id="CWB-sL-AFb" userLabel="Expiration Show Table View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="left" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicineItem" rowHeight="97" id="Gxo-Cp-pbo" customClass="ExpirationShowTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="97"/>
+                            <tableViewCell clipsSubviews="YES" tag="1000" contentMode="left" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MedicineItem" rowHeight="63" id="Gxo-Cp-pbo" customClass="ExpirationShowTableViewCell" customModule="PillsPromise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gxo-Cp-pbo" id="RJN-0m-ah4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CIq-Dp-TBS" userLabel="Expiration Text Label">
-                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="CIq-Dp-TBS" userLabel="Expiration Text Label">
+                                            <rect key="frame" x="20" y="0.0" width="186" height="63"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GCV-EX-0Lf" userLabel="Expiration Date Text Label">
-                                            <rect key="frame" x="20" y="38" width="374" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유통기한" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="GCV-EX-0Lf" userLabel="Expiration Date Text Label">
+                                            <rect key="frame" x="214" y="0.0" width="186" height="63"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="expirationTextLabel" destination="CIq-Dp-TBS" id="YO7-AJ-Zjo"/>
+                                    <outlet property="expirationDateTextLabel" destination="GCV-EX-0Lf" id="xSf-Zy-qy5"/>
+                                    <outlet property="expirationTextLabel" destination="CIq-Dp-TBS" id="Y4f-OB-sIh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9vL-Mh-53B" id="pMk-92-xm7"/>
+                            <outlet property="delegate" destination="9vL-Mh-53B" id="8eG-Uu-VkM"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="uoX-cA-XJ4"/>
                     <connections>
