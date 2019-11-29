@@ -12,7 +12,8 @@ class MedicineList{
     
     var medicines: [MedicineItem] = []
     
-    init(){
+    init() {
+        
         let row0Item = MedicineItem()
         let row1Item = MedicineItem()
         let row2Item = MedicineItem()
@@ -81,4 +82,5 @@ class MedicineList{
             }
         }
     }
+ 
 }

@@ -52,6 +52,7 @@ class MedicineItem: NSObject {
 }
 
 //이거 필요없어요
+/*
 extension MedicineItem {
     var isExpirationOrLeftMonthItem: Bool {
                 
@@ -70,6 +71,7 @@ extension MedicineItem {
         }
     }
 }
+*/
 
 //얘는 사용
 extension Date {

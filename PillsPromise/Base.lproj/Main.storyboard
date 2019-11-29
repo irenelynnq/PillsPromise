@@ -66,7 +66,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="medicineExpirationLabel" destination="VuI-CL-mGa" id="8kw-eC-Bny"/>
+                                    <outlet property="medicineExpirationLabel" destination="VuI-CL-mGa" id="2MV-NK-mj5"/>
                                     <outlet property="medicineInfoLabel" destination="ICj-DS-zII" id="ZgS-Dz-9fe"/>
                                     <outlet property="medicineTextLabel" destination="nbu-cU-IVY" id="pvz-P5-pmj"/>
                                     <segue destination="Mqi-BO-P3z" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="o5y-5M-pdV"/>
