@@ -9,8 +9,17 @@
 import UIKit
 
 class AlarmTableViewCell: UITableViewCell {
-    @IBOutlet weak var AlarmMedicineTextLabel: UILabel!
     
+    var viewModel: MedicineItem? {
+        didSet {
+            if let viewModel = viewModel {
+                AlarmMedicineTextLabel.text = "\(viewModel.name)"
+            }
+        }
+    }
+    
+    @IBOutlet weak var AlarmMedicineTextLabel: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
