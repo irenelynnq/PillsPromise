@@ -50,7 +50,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AlarmTableView" destination="mum-14-Fkm" id="JeV-M7-0eF"/>
+                        <outlet property="AlarmTableView" destination="mum-14-Fkm" id="A4c-Pd-iNi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-R0-th5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,6 @@
 import UIKit
 
 class AlarmTableViewController: UITableViewController {
-        @IBOutlet weak var AlarmTableView: UITableView!
     
     var medicineList: MedicineList {
         return SingletoneMedicineList.shared.medicineList
@@ -21,6 +20,18 @@ class AlarmTableViewController: UITableViewController {
         let medicines = medicineList.listOfHavingAlarms()
         return medicines
     }
+    
+    @IBOutlet weak var AlarmTableView: UITableView! {
+        didSet {
+            // set up 테이블 뷰 꾸민 것?
+            AlarmTableView.delegate = self
+            AlarmTableView.dataSource = self
+            AlarmTableView.separatorStyle = .none
+            AlarmTableView.rowHeight = UITableView.automaticDimension
+            AlarmTableView.estimatedRowHeight = 128.0
+        }
+    }
+    
 
     
     override func viewDidLoad() {
@@ -97,8 +108,6 @@ class AlarmTableViewController: UITableViewController {
      }
 */
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -129,6 +138,7 @@ class AlarmTableViewController: UITableViewController {
         return cell
     }
     
+    }
 
 
     /*

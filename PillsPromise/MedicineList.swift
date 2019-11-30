@@ -50,8 +50,8 @@ class MedicineList{
         row1Item.alarms.append(alarmsformatter.date(from: "12:00")!)
         row2Item.alarms.append(alarmsformatter.date(from: "09:20")!)
         row3Item.alarms.append(alarmsformatter.date(from: "10:10")!)
+        row3Item.alarms.append(alarmsformatter.date(from: "08:02")!)
 
-        
         
         medicines.append(row0Item)
         medicines.append(row1Item)
