@@ -44,7 +44,7 @@ class AlarmTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-/*
+
     //delete
     
     @IBAction func deleteAlarms(_ sender: Any) {
@@ -53,14 +53,16 @@ class AlarmTableViewController: UITableViewController {
             for indexPath in selectedRows {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
-            MedicineItem.deleteAlarms(self) as? MedicineItem
+            for item in items {
+                item.deleteAlarms()
+            }
             AlarmTableView.beginUpdates()
             AlarmTableView.deleteRows(at: selectedRows, with: .automatic)
             AlarmTableView.endUpdates()
         }
     }
     
-    
+  /*
      @IBAction func deleteItems(_ sender: Any) {
          if let selectedRows = mainTableView.indexPathsForSelectedRows {
              var items = [MedicineItem]()
@@ -138,7 +140,7 @@ class AlarmTableViewController: UITableViewController {
         return cell
     }
     
-    }
+
 
 
     /*
