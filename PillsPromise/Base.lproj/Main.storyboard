@@ -15,11 +15,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="MedicineItem" rowHeight="150" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicineItem" rowHeight="150" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dk-lc-Dwn" id="phq-37-IgQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-nt-4HE">
@@ -36,13 +36,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="사용 기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-CL-mGa">
-                                            <rect key="frame" x="20" y="71" width="331" height="22"/>
+                                            <rect key="frame" x="20" y="71" width="363" height="22"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 효능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-DS-zII">
-                                            <rect key="frame" x="20" y="101" width="331" height="26"/>
+                                            <rect key="frame" x="20" y="101" width="363" height="26"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                     <outlet property="medicineExpirationLabel" destination="VuI-CL-mGa" id="2MV-NK-mj5"/>
                                     <outlet property="medicineInfoLabel" destination="ICj-DS-zII" id="ZgS-Dz-9fe"/>
                                     <outlet property="medicineTextLabel" destination="nbu-cU-IVY" id="pvz-P5-pmj"/>
-                                    <segue destination="Mqi-BO-P3z" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="o5y-5M-pdV"/>
+                                    <segue destination="Mqi-BO-P3z" kind="show" identifier="EditItemSegue" id="b63-6I-Pze"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -247,6 +247,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Qo4-Nb-Sex"/>
+        <segue reference="b63-6I-Pze"/>
     </inferredMetricsTieBreakers>
 </document>
