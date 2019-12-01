@@ -58,6 +58,16 @@ class ExpirationShowTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("ModifiedNotification"), object: nil)
+    }
+    
+    @objc func receiveModifiedNotification(_ notification: Notification) {
+        expirationShowTableView.reloadData()
+        print("expiration hear!")
     }
 
 }

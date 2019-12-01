@@ -27,11 +27,26 @@ class MainTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         mainTableView.allowsMultipleSelectionDuringEditing = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("ModifiedNotification"), object: nil)
+    }
+    
+    func respondToPostNotification(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("ModifiedNotification"), object: nil)
+    }
+    
+    @objc func receiveModifiedNotification(_ notification: Notification) {
+        mainTableView.reloadData()
+        print("main hear!")
     }
     
     /*
@@ -55,6 +70,7 @@ class MainTableViewController: UITableViewController {
             mainTableView.beginUpdates()
             mainTableView.deleteRows(at: selectedRows, with: .automatic)
             mainTableView.endUpdates()
+            respondToPostNotification(self)
         }
     }
     
@@ -105,6 +121,7 @@ extension MainTableViewController {
         medicineList.medicines.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+        respondToPostNotification(self)
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -132,8 +149,10 @@ extension MainTableViewController {
 extension MainTableViewController: ItemDetailViewControllerDelegate {
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem){
         mainTableView.reloadData()
+        respondToPostNotification(self)
     }
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem){
         mainTableView.reloadData()
+        respondToPostNotification(self)
     }
 }
