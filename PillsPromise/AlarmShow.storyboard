@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4fY-gN-FWx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxc-KQ-dct">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -33,21 +33,33 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="AlarmMedicineTextLabel" destination="bKL-Tj-saG" id="Wpk-jf-bZg"/>
-                                    <segue destination="dFG-kx-SUu" kind="show" trigger="accessoryAction" id="1B3-OP-flH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="4fY-gN-FWx" id="vcs-wj-yWD"/>
-                            <outlet property="delegate" destination="4fY-gN-FWx" id="4ca-yT-Vhi"/>
+                            <outlet property="delegate" destination="7yv-XO-qms" id="ZBp-rw-Fbi"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="약쏙" id="7yv-XO-qms">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PPS-Wg-wVT">
-                            <connections>
-                                <segue destination="dFG-kx-SUu" kind="show" id="MO7-rH-T3u"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="PPS-Wg-wVT">
+                                <connections>
+                                    <action selector="addItem:" destination="4fY-gN-FWx" id="UHq-RG-xLU"/>
+                                    <segue destination="dFG-kx-SUu" kind="show" id="MO7-rH-T3u"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="TEG-V2-ckI">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oj8-Pt-9fN">
+                                    <rect key="frame" x="261.5" y="7" width="92" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="delete"/>
+                                </button>
+                                <connections>
+                                    <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="n0U-oe-erG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="AlarmTableView" destination="mum-14-Fkm" id="A4c-Pd-iNi"/>
@@ -86,7 +98,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="MO7-rH-T3u"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -85,7 +85,7 @@ class MedicineList{
     
     func listOfHavingAlarms() -> [MedicineItem] {
         return medicines.filter {
-            $0.alarms.count > 1
+            $0.alarms.count > 0
         }
     }
  
