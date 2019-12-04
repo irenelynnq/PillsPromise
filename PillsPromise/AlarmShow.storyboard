@@ -33,6 +33,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="AlarmMedicineTextLabel" destination="bKL-Tj-saG" id="Wpk-jf-bZg"/>
+                                    <segue destination="BA9-AO-Vh2" kind="show" identifier="AlarmDetailSegue" id="1Nc-RF-saF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,6 +69,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbe-R0-th5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--ItemDetailAlarmTableViewController-->
+        <scene sceneID="hYB-vP-p4L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ItemDetail" referencedIdentifier="ItemDetailAlarmTableViewController" id="BA9-AO-Vh2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ftb-Zg-159"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ip-2Z-B3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="-49"/>
         </scene>
         <!--ItemDetail-->
         <scene sceneID="miR-nE-PY4">

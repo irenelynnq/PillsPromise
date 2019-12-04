@@ -83,6 +83,12 @@ class MedicineList{
         }
     }
     
+    func removeAlarms(items: [MedicineItem]) {
+        for item in items {
+            item.deleteAlarms()
+        }
+    }
+    
     func listOfHavingAlarms() -> [MedicineItem] {
         return medicines.filter {
             $0.alarms.count > 0

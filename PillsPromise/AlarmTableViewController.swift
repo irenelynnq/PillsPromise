@@ -40,6 +40,19 @@ class AlarmTableViewController: UITableViewController {
            print("Alarm hear!")
        }
     
+ /*alarm 디테일 뷰로 넘어가는 프리페어 셀
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "AlarmDetailSegue" {
+            if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
+                itemDetailAlarmTableViewController.delegate = self
+                itemDetailAlarmTableViewController.alarmList = item.alarms
+            }
+        }
+    }
+ 
+ */
+    
+    
     //delete -> 안됨
     
     @IBAction func deleteAlarms(_ sender: Any) {
@@ -48,16 +61,18 @@ class AlarmTableViewController: UITableViewController {
             for indexPath in selectedRows {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
-            for item in items {
-                item.deleteAlarms()
-            }
+            
+            medicineList.removeAlarms(items: items)
+            
             AlarmTableView.beginUpdates()
             AlarmTableView.deleteRows(at: selectedRows, with: .automatic)
             AlarmTableView.endUpdates()
             respondToPostNotification(self)
         }
     }
-
+    
+    
+    
     @IBAction func addItem(_ sender: Any) {
         let newRowIndex = medicineList.medicines.count
         _ = medicineList.newMedicine()
@@ -68,14 +83,17 @@ class AlarmTableViewController: UITableViewController {
     }
     
     
+    
     // swipe delete -> 되긴 하는데 알람 삭제는 안됨 셀만 사라짐
     
     override func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
-        medicineList.medicines.remove(at: indexPath.row)
+        let item = medicines_HavingAlarms[indexPath.row]
+        medicineList.removeAlarms(items: [item])
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
+                    respondToPostNotification(self)
     }
     
     // moving 됨
@@ -135,5 +153,13 @@ extension AlarmTableViewController: ItemDetailViewControllerDelegate {
         AlarmTableView.reloadData()
         respondToPostNotification(self)
     }
+}
+
+extension AlarmTableViewController: ItemDetailAlarmTableViewControllerDelegate {
+    func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]) {
+        AlarmTableView.reloadData()
+    }
+    
+    
 }
 
