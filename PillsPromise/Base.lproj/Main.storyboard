@@ -69,7 +69,6 @@
                                     <outlet property="medicineExpirationLabel" destination="VuI-CL-mGa" id="2MV-NK-mj5"/>
                                     <outlet property="medicineInfoLabel" destination="ICj-DS-zII" id="ZgS-Dz-9fe"/>
                                     <outlet property="medicineTextLabel" destination="nbu-cU-IVY" id="pvz-P5-pmj"/>
-                                    <segue destination="Mqi-BO-P3z" kind="show" identifier="EditItemSegue" id="b63-6I-Pze"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -246,7 +245,4 @@
             <point key="canvasLocation" x="1925" y="-544"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="b63-6I-Pze"/>
-    </inferredMetricsTieBreakers>
 </document>

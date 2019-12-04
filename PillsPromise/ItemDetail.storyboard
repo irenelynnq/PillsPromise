@@ -10,7 +10,7 @@
         <!--Item-->
         <scene sceneID="BIm-JK-u2y">
             <objects>
-                <tableViewController id="BKe-jA-eWw" customClass="ItemDetailViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ItemDetailViewController" id="BKe-jA-eWw" customClass="ItemDetailViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fcu-Qx-UJf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,14 +323,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ItemDetailAlarm" id="Yv4-h5-cRM" customClass="ItemDetailAlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="52.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yv4-h5-cRM" id="w2k-ha-fix">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-3p-Fzi">
-                                            <rect key="frame" x="28" y="15.5" width="307" height="21.5"/>
+                                            <rect key="frame" x="28" y="15.5" width="307" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

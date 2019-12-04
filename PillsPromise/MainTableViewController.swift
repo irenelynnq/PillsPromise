@@ -9,7 +9,8 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-    @IBOutlet weak var mainTableView: UITableView!  
+    @IBOutlet weak var mainTableView: UITableView!
+    
     
     var medicineList: MedicineList {
         return SingletoneMedicineList.shared.medicineList
@@ -60,6 +61,19 @@ class MainTableViewController: UITableViewController {
     }
  */
     
+    func goItemDetail(_ sender: UITableViewCell) {
+        if let itemDetailViewController = UIStoryboard(name: "ItemDetail", bundle: nil).instantiateViewController(identifier: "ItemDetailViewController") as? ItemDetailViewController
+        {
+            if let cell = sender as? UITableViewCell,
+                let indexPath = mainTableView.indexPath(for: cell) {
+                let item = medicineList.medicines[indexPath.row]
+                itemDetailViewController.itemToEdit = item
+                itemDetailViewController.delegate = self
+            }
+            navigationController?.pushViewController(itemDetailViewController, animated: true)
+        }
+    }
+    
     @IBAction func deleteItems(_ sender: Any) {
         if let selectedRows = mainTableView.indexPathsForSelectedRows {
             var items = [MedicineItem]()
@@ -104,6 +118,17 @@ extension MainTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicineList.medicines.count
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if !(super.isEditing) {
+            goItemDetail(mainTableView.cellForRow(at: indexPath)!)
+        }
+        else {
+            mainTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /* cell을 tableView에 띄워 주는 함수 */
         let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
@@ -128,6 +153,7 @@ extension MainTableViewController {
         /* moving */
         medicineList.move(item: medicineList.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
         tableView.reloadData()
+        respondToPostNotification(self)
     }
     
     func configureText(for cell: UITableViewCell, with item: MedicineItem) {
