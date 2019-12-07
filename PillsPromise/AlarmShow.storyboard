@@ -43,24 +43,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="약쏙" id="7yv-XO-qms">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="PPS-Wg-wVT">
-                                <connections>
-                                    <action selector="addItem:" destination="4fY-gN-FWx" id="UHq-RG-xLU"/>
-                                    <segue destination="dFG-kx-SUu" kind="show" id="MO7-rH-T3u"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="TEG-V2-ckI">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oj8-Pt-9fN">
-                                    <rect key="frame" x="261.5" y="7" width="92" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="delete"/>
-                                </button>
-                                <connections>
-                                    <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="n0U-oe-erG"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="TEG-V2-ckI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oj8-Pt-9fN">
+                                <rect key="frame" x="261.5" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="delete"/>
+                            </button>
+                            <connections>
+                                <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="n0U-oe-erG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="AlarmTableView" destination="mum-14-Fkm" id="A4c-Pd-iNi"/>

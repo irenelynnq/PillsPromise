@@ -40,6 +40,7 @@ class AlarmTableViewController: UITableViewController {
            print("Alarm hear!")
        }
     
+    
 // alarm 디테일 뷰로 넘어가는 프리페어 셀
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AlarmDetailSegue" {
@@ -53,26 +54,6 @@ class AlarmTableViewController: UITableViewController {
             }
         }
     }
- 
-    
-    /*    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "AddItemSegue"{
-            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
-                itemDetailViewController.delegate = self
-                itemDetailViewController.medicineList = medicineList
-            }
-        } else if segue.identifier == "EditItemSegue" {
-            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
-                if let cell = sender as? UITableViewCell,
-                    let indexPath = mainTableView.indexPath(for: cell) {
-                    let item = medicineList.medicines[indexPath.row]
-                    itemDetailViewController.itemToEdit = item
-                    itemDetailViewController.delegate = self
-                }
-            }
-        }
-    }*/
-
     
     
     //delete -> 안됨
@@ -83,9 +64,7 @@ class AlarmTableViewController: UITableViewController {
             for indexPath in selectedRows {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
-            
             medicineList.removeAlarms(items: items)
-            
             AlarmTableView.beginUpdates()
             AlarmTableView.deleteRows(at: selectedRows, with: .automatic)
             AlarmTableView.endUpdates()
@@ -101,10 +80,12 @@ class AlarmTableViewController: UITableViewController {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         let item = medicines_HavingAlarms[indexPath.row]
+        
         medicineList.removeAlarms(items: [item])
+        
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
-                    respondToPostNotification(self)
+        respondToPostNotification(self)
     }
     
     // moving 됨
