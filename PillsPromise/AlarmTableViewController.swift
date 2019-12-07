@@ -150,6 +150,7 @@ extension AlarmTableViewController: ItemDetailViewControllerDelegate {
 extension AlarmTableViewController: ItemDetailAlarmTableViewControllerDelegate {
     func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]) {
         AlarmTableView.reloadData()
+        respondToPostNotification(self)
     }
     
     
