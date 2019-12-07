@@ -40,17 +40,39 @@ class AlarmTableViewController: UITableViewController {
            print("Alarm hear!")
        }
     
- /*alarm 디테일 뷰로 넘어가는 프리페어 셀
+// alarm 디테일 뷰로 넘어가는 프리페어 셀
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AlarmDetailSegue" {
             if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
+                if let cell = sender as? UITableViewCell,
+                    let indexPath = AlarmTableView.indexPath(for: cell) {
+                    let item = medicines_HavingAlarms[indexPath.row]
                 itemDetailAlarmTableViewController.delegate = self
                 itemDetailAlarmTableViewController.alarmList = item.alarms
+                }
             }
         }
     }
  
- */
+    
+    /*    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "AddItemSegue"{
+            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
+                itemDetailViewController.delegate = self
+                itemDetailViewController.medicineList = medicineList
+            }
+        } else if segue.identifier == "EditItemSegue" {
+            if let itemDetailViewController = segue.destination as? ItemDetailViewController {
+                if let cell = sender as? UITableViewCell,
+                    let indexPath = mainTableView.indexPath(for: cell) {
+                    let item = medicineList.medicines[indexPath.row]
+                    itemDetailViewController.itemToEdit = item
+                    itemDetailViewController.delegate = self
+                }
+            }
+        }
+    }*/
+
     
     
     //delete -> 안됨
@@ -69,17 +91,6 @@ class AlarmTableViewController: UITableViewController {
             AlarmTableView.endUpdates()
             respondToPostNotification(self)
         }
-    }
-    
-    
-    
-    @IBAction func addItem(_ sender: Any) {
-        let newRowIndex = medicineList.medicines.count
-        _ = medicineList.newMedicine()
-        
-        let indexPath = IndexPath(row: newRowIndex, section: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRows(at: indexPaths, with: .automatic)
     }
     
     
