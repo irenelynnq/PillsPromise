@@ -91,7 +91,7 @@ class AlarmTableViewController: UITableViewController {
     // moving 됨
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        medicineList.move(item: medicineList.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
+        medicineList.move(item: medicines_HavingAlarms[sourceIndexPath.row], to: destinationIndexPath.row)
         tableView.reloadData()
     }
     
