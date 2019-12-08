@@ -16,7 +16,6 @@ class AlarmTableViewController: UITableViewController {
     
     @IBOutlet weak var AlarmTableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -56,9 +55,11 @@ class AlarmTableViewController: UITableViewController {
     }
     
     
-    //delete -> 안됨
+    //delete
     
     @IBAction func deleteAlarms(_ sender: Any) {
+        print("delete")
+        
         if let selectedRows = AlarmTableView.indexPathsForSelectedRows {
             var items = [MedicineItem]()
             for indexPath in selectedRows {
@@ -74,7 +75,7 @@ class AlarmTableViewController: UITableViewController {
     
     
     
-    // swipe delete -> 되긴 하는데 알람 삭제는 안됨 셀만 사라짐
+    // swipe delete
     
     override func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle,

@@ -43,14 +43,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="약쏙" id="7yv-XO-qms">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="TEG-V2-ckI">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oj8-Pt-9fN">
-                                <rect key="frame" x="261.5" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="delete"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="6P1-5j-fSf">
                             <connections>
-                                <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="n0U-oe-erG"/>
+                                <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="Hmp-jf-0MS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
