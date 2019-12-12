@@ -14,6 +14,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var medicineExpirationLabel: UILabel!
     @IBOutlet weak var medicineInfoLabel: UILabel!
     
+    @IBOutlet weak var medicineImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

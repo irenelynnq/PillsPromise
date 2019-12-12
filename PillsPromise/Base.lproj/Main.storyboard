@@ -67,6 +67,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="medicineExpirationLabel" destination="VuI-CL-mGa" id="2MV-NK-mj5"/>
+                                    <outlet property="medicineImageView" destination="ytf-nt-4HE" id="k4y-1K-W1J"/>
                                     <outlet property="medicineInfoLabel" destination="ICj-DS-zII" id="ZgS-Dz-9fe"/>
                                     <outlet property="medicineTextLabel" destination="nbu-cU-IVY" id="pvz-P5-pmj"/>
                                 </connections>

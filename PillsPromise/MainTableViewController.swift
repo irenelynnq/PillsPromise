@@ -120,11 +120,20 @@ extension MainTableViewController {
         return medicineList.medicines.count
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if !(super.isEditing) {
             goItemDetail(mainTableView.cellForRow(at: indexPath)!)
         }
+        /*
+        else if super.isEditing {
+            if let cell = mainTableView.cellForRow(at: indexPath) {
+                cell.setSelected(true, animated: true)
+                cell.setHighlighted(true, animated: true)
+            }
+        }
+ */
             /*
         else {
             mainTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
@@ -160,15 +169,12 @@ extension MainTableViewController {
     }
     
     func configureText(for cell: UITableViewCell, with item: MedicineItem) {
-        /* cell의 text를 출력하는 함수 */
+        /* cell의 내용을 출력하는 함수 */
         if let medicineCell = cell as? MainTableViewCell {
             medicineCell.medicineTextLabel.text = item.name
-        }
-        if let medicineCell = cell as? MainTableViewCell {
             medicineCell.medicineExpirationLabel.text = item.date_expiration_string
-        }
-        if let medicineCell = cell as? MainTableViewCell {
             medicineCell.medicineInfoLabel.text = item.med_info
+            medicineCell.medicineImageView.image = item.image
         }
     }
     

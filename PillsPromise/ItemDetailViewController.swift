@@ -29,11 +29,32 @@ class ItemDetailViewController: UITableViewController {
     
     @IBOutlet weak var deleteExpirationDateButton: UIButton!
     
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let picker = UIImagePickerController()
+    
+    @IBAction func imageAdd(_ sender: Any) {
+        let alert = UIAlertController(title: "사진 편집", message: "약 사진을 편집합니다", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+            
+        }
+        let camera = UIAlertAction(title: "카메라", style: .default) { (action) in self.openCamera()
+            
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
     var temp_date_expiration: Date?
     var temp_alarms: [Date] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.delegate = self
         
         if let item = itemToEdit {
             title = "Edit Item"
@@ -44,6 +65,7 @@ class ItemDetailViewController: UITableViewController {
             textfield_other_info.text = item.other_info
             temp_alarms = item.alarms
             addBarButton.isEnabled = true
+            imageView.image = item.image
         }
         loadExpirationDate()
         navigationItem.largeTitleDisplayMode = .never
@@ -108,6 +130,7 @@ class ItemDetailViewController: UITableViewController {
             }
             item.date_expiration = temp_date_expiration
             item.alarms = temp_alarms
+            item.image = imageView.image
             delegate?.itemDetailViewController(self, didFinishEditing: item)
         } else {
             if let item = medicineList?.newMedicine() {
@@ -125,6 +148,7 @@ class ItemDetailViewController: UITableViewController {
                 }
                 item.date_expiration = temp_date_expiration
                 item.alarms = temp_alarms
+                item.image = imageView.image
                 delegate?.itemDetailViewController(self, didFinishAdding: item)
             }
         }
@@ -132,6 +156,21 @@ class ItemDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath?{
         return nil
+    }
+    
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        present(picker, animated: false, completion: nil)
+    }
+    
+    func openCamera() {
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+            picker.sourceType = .camera
+            present(picker, animated: false, completion: nil)
+        }
+        else {
+            print("Camera not available")
+        }
     }
 
 }
@@ -172,3 +211,19 @@ extension ItemDetailViewController: ItemDetailAlarmTableViewControllerDelegate {
         temp_alarms = alarms
     }
 }
+
+extension ItemDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage{
+            imageView.image = image
+            
+            print(info)
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
+
+

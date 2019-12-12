@@ -44,6 +44,8 @@ class MedicineItem: NSObject {
         }
     }
     
+    var image: UIImage? = nil
+    
     var calendar = Calendar.current
     
     func deleteAlarms(){
