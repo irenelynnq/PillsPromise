@@ -28,6 +28,7 @@ class MainTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         mainTableView.allowsMultipleSelectionDuringEditing = true
+        mainTableView.allowsSelectionDuringEditing = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
         // Uncomment the following line to preserve selection between presentations
@@ -124,9 +125,11 @@ extension MainTableViewController {
         if !(super.isEditing) {
             goItemDetail(mainTableView.cellForRow(at: indexPath)!)
         }
+            /*
         else {
             mainTableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
         }
+ */
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
