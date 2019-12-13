@@ -43,6 +43,15 @@ class MedicineItem: NSObject {
             return strings
         }
     }
+    var alarms_string_concat: String {
+        var string = ""
+        for time in alarms_string {
+            string.append(time)
+            string.append(", ")
+        }
+        string = String(string.dropLast(2))
+        return string
+    }
     
     var image: UIImage? = nil
     

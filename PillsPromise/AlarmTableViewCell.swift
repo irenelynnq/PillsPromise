@@ -18,8 +18,9 @@ class AlarmTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet weak var AlarmMedicineTextLabel: UILabel!
-
+    @IBOutlet weak var AlarmMedicineTextLabel: UILabel!    
+    @IBOutlet weak var alarmListLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

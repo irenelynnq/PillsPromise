@@ -16,6 +16,7 @@ class ItemDetailAlarmTableViewController: UITableViewController {
     weak var delegate: ItemDetailAlarmTableViewControllerDelegate?
     @IBOutlet weak var itemDetailAlarmTableView: UITableView!
     
+    
     var alarmList: [Date] = []
     var alarmList_string: [String] {
         //알람을 오전/오후 -시-분의 스트링으로 만들어 줌 (알람이 없다면 빈 배열)

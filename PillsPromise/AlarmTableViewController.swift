@@ -6,6 +6,8 @@ class AlarmTableViewController: UITableViewController {
         return SingletoneMedicineList.shared.medicineList
     }
     
+    var selectedItemForEdit: MedicineItem? = nil
+    
     
     //알람 정보 있는 약들 불러오기
 
@@ -14,13 +16,14 @@ class AlarmTableViewController: UITableViewController {
         return medicines
     }
     
-    @IBOutlet weak var AlarmTableView: UITableView!
+    @IBOutlet weak var alarmTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
-        AlarmTableView.allowsMultipleSelectionDuringEditing = true
+        alarmTableView.allowsMultipleSelectionDuringEditing = true
+        alarmTableView.allowsSelectionDuringEditing = true
         
           NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
     }
@@ -35,18 +38,20 @@ class AlarmTableViewController: UITableViewController {
        }
        
        @objc func receiveModifiedNotification(_ notification: Notification) {
-           AlarmTableView.reloadData()
+           alarmTableView.reloadData()
            print("Alarm hear!")
        }
     
     
 // alarm 디테일 뷰로 넘어가는 프리페어 셀
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "AlarmDetailSegue" {
             if let itemDetailAlarmTableViewController = segue.destination as? ItemDetailAlarmTableViewController {
                 if let cell = sender as? UITableViewCell,
-                    let indexPath = AlarmTableView.indexPath(for: cell) {
+                    let indexPath = alarmTableView.indexPath(for: cell) {
                     let item = medicines_HavingAlarms[indexPath.row]
+                    selectedItemForEdit = item
                 itemDetailAlarmTableViewController.delegate = self
                 itemDetailAlarmTableViewController.alarmList = item.alarms
                 }
@@ -55,20 +60,21 @@ class AlarmTableViewController: UITableViewController {
     }
     
     
+    
     //delete
     
     @IBAction func deleteAlarms(_ sender: Any) {
         print("delete")
         
-        if let selectedRows = AlarmTableView.indexPathsForSelectedRows {
+        if let selectedRows = alarmTableView.indexPathsForSelectedRows {
             var items = [MedicineItem]()
             for indexPath in selectedRows {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
             medicineList.removeAlarms(items: items)
-            AlarmTableView.beginUpdates()
-            AlarmTableView.deleteRows(at: selectedRows, with: .automatic)
-            AlarmTableView.endUpdates()
+            alarmTableView.beginUpdates()
+            alarmTableView.deleteRows(at: selectedRows, with: .automatic)
+            alarmTableView.endUpdates()
             respondToPostNotification(self)
         }
     }
@@ -96,6 +102,7 @@ class AlarmTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: true)
     }
@@ -119,7 +126,8 @@ class AlarmTableViewController: UITableViewController {
     func configureText(for cell: UITableViewCell, with item: MedicineItem) {
            
        if let medicineCell = cell as? AlarmTableViewCell {
-           medicineCell.AlarmMedicineTextLabel.text = item.name
+        medicineCell.AlarmMedicineTextLabel.text = item.name
+        medicineCell.alarmListLabel.text = item.alarms_string_concat
        }
            
     }
@@ -127,30 +135,36 @@ class AlarmTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "AlarmMedicineItem", for: indexPath)
-        
+        cell.selectionStyle = .default
         let item = medicines_HavingAlarms[indexPath.row]
         configureText(for: cell, with: item)
         
         return cell
     }
     
-    }
+    
+    
+}
+
 
 
 extension AlarmTableViewController: ItemDetailViewControllerDelegate {
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem){
-        AlarmTableView.reloadData()
+        alarmTableView.reloadData()
         respondToPostNotification(self)
     }
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem){
-        AlarmTableView.reloadData()
+        alarmTableView.reloadData()
         respondToPostNotification(self)
     }
 }
+ 
 
 extension AlarmTableViewController: ItemDetailAlarmTableViewControllerDelegate {
     func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]) {
-        AlarmTableView.reloadData()
+        selectedItemForEdit?.alarms = alarms
+        selectedItemForEdit = nil
+        alarmTableView.reloadData()
         respondToPostNotification(self)
     }
     
