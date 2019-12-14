@@ -174,7 +174,31 @@ extension AlarmTableViewController: ItemDetailViewControllerDelegate {
 
 extension AlarmTableViewController: ItemDetailAlarmTableViewControllerDelegate {
     func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]) {
-        selectedItemForEdit?.alarms = alarms
+        if let item = selectedItemForEdit {
+            item.alarms = alarms
+            var id = item.name
+            id.append("_alarm")
+            center.removePendingNotificationRequests(withIdentifiers: [id])
+            center.removeDeliveredNotifications(withIdentifiers: [id])
+            for alarm in item.alarms {
+                let content = UNMutableNotificationContent()
+                content.title = "약 먹을 시간이에요"
+                content.subtitle = item.name
+                let dateformatter = DateFormatter()
+                dateformatter.dateStyle = .none
+                dateformatter.timeStyle = .short
+                content.body = dateformatter.string(from: alarm)
+                let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: alarm)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+                var identifier = item.name
+                identifier.append("_alarm")
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                center.add(request, withCompletionHandler: {(error) in if let error = error {
+                    print(error)
+                    }})
+            }
+        }
+        
         selectedItemForEdit = nil
         alarmTableView.reloadData()
         respondToPostNotification(self)

@@ -159,23 +159,24 @@ class ItemDetailViewController: UITableViewController {
                 center.add(request, withCompletionHandler: {(error) in if let error = error {
                     print(error)
                     }})
-                if let date_exp = item.date_expiration {
-                    let content = UNMutableNotificationContent()
-                    content.title = "약의 유통기한이 다 되었어요"
-                    content.subtitle = item.name
-                    let dateformatter = DateFormatter()
-                    dateformatter.dateStyle = .long
-                    dateformatter.timeStyle = .none
-                    content.body = dateformatter.string(from: date_exp)
-                    let triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date_exp)
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-                    let identifier = item.name
-                    let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                    center.add(request, withCompletionHandler: {(error) in if let error = error {
-                        print(error)
-                        }})
-                }
             }
+            if let date_exp = item.date_expiration {
+                let content = UNMutableNotificationContent()
+                content.title = "약의 유통기한이 다 되었어요"
+                content.subtitle = item.name
+                let dateformatter = DateFormatter()
+                dateformatter.dateStyle = .long
+                dateformatter.timeStyle = .none
+                content.body = dateformatter.string(from: date_exp)
+                let triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date_exp)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+                let identifier = item.name
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+                center.add(request, withCompletionHandler: {(error) in if let error = error {
+                    print(error)
+                    }})
+            }
+            
         } else {
             if let item = medicineList?.newMedicine() {
                 if let text_name = textfield_name.text {

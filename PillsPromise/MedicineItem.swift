@@ -8,7 +8,39 @@
 
 import UIKit
 
-class MedicineItem: NSObject {
+class MedicineItem: NSObject, NSCoding {
+    
+    init(name: String, med_info: String, date_expiration: Date?, take_info: String, other_info: String, alarms: [Date], image: UIImage?) {
+        self.name = name
+        self.med_info = med_info
+        self.date_expiration = date_expiration
+        self.take_info = take_info
+        self.other_info = other_info
+        self.alarms = alarms
+        self.image = image
+    }
+    func encode(with coder: NSCoder) {
+        coder.encode(self.name, forKey: "name")
+        coder.encode(self.med_info, forKey: "med_info")
+        coder.encode(self.date_expiration, forKey: "date_expiration")
+        coder.encode(self.take_info, forKey: "take_info")
+        coder.encode(self.other_info, forKey: "other_info")
+        coder.encode(self.alarms, forKey: "alarms")
+        coder.encode(self.image, forKey: "image")
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        guard let name = coder.decodeObject(forKey: "name") as? String else {return nil}
+        let med_info = coder.decodeObject(forKey: "med_info") as? String ?? ""
+        let date_expiration = coder.decodeObject(forKey: "date_expiration") as? Date ?? nil
+        let take_info = coder.decodeObject(forKey: "take_info") as? String ?? ""
+        let other_info = coder.decodeObject(forKey: "other_info") as? String ?? ""
+        let alarms = coder.decodeObject(forKey: "alarms") as? [Date] ?? []
+        let image = coder.decodeObject(forKey: "image") as? UIImage ?? nil
+        
+        self.init(name: name, med_info: med_info, date_expiration: date_expiration, take_info: take_info, other_info: other_info, alarms: alarms, image: image)
+    }
+    
     var name = ""
     var med_info = ""
     var date_expiration: Date? = nil //유통기한 탭에서는 이걸 기준으로 필터해서 보여줍니다
@@ -55,34 +87,35 @@ class MedicineItem: NSObject {
     
     var image: UIImage? = nil
     
-    var calendar = Calendar.current
+    func deleteAlarmNotifications(){
+        for index in 0...alarms.count {
+            var id = self.name
+            id.append("_alarm")
+            id.append(String(index))
+            center.removePendingNotificationRequests(withIdentifiers: [id])
+            center.removeDeliveredNotifications(withIdentifiers: [id])
+        }
+    }
+    
+    func deleteExpNotifications(){
+        var id = self.name
+        id.append("_exp")
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
+    }
+    
+    func setNotifications(){
+        
+    }
     
     func deleteAlarms(){
         alarms.removeAll()
     }
 }
 
-//이거 필요없어요
-/*
-extension MedicineItem {
-    var isExpirationOrLeftMonthItem: Bool {
-                
-        // 유통기한 오늘기준 지난거
-        let expired = date_expiration! < Date()
-        
-        // 오늘기준 30일 남은 거
-        let monthLater = Date().adding(day: 30)
-        let leftOneMonth = date_expiration! < monthLater
-        
-        if expired || leftOneMonth {
-            return true
-            
-        } else {
-            return false
-        }
-    }
-}
-*/
+
+
+
 
 //얘는 사용
 extension Date {

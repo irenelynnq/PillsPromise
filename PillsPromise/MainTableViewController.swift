@@ -47,6 +47,7 @@ class MainTableViewController: UITableViewController {
     
     @objc func receiveModifiedNotification(_ notification: Notification) {
         mainTableView.reloadData()
+        SingletoneMedicineList.shared.medicineList.save()
         print("main hear!")
     }
     
@@ -81,14 +82,8 @@ class MainTableViewController: UITableViewController {
                 items.append(medicineList.medicines[indexPath.row])
             }
             for item in items {
-                var id = item.name
-                id.append("_alarm")
-                center.removePendingNotificationRequests(withIdentifiers: [id])
-                center.removeDeliveredNotifications(withIdentifiers: [id])
-                id = item.name
-                id.append("_exp")
-                center.removePendingNotificationRequests(withIdentifiers: [id])
-                center.removeDeliveredNotifications(withIdentifiers: [id])
+                item.deleteAlarmNotifications()
+                item.deleteExpNotifications()
             }
             medicineList.remove(items: items)
             mainTableView.beginUpdates()

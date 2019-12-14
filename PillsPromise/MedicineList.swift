@@ -13,7 +13,7 @@ class MedicineList{
     var medicines: [MedicineItem] = []
     
     init() {
-        
+        /*
         let row0Item = MedicineItem()
         let row1Item = MedicineItem()
         let row2Item = MedicineItem()
@@ -58,14 +58,17 @@ class MedicineList{
         medicines.append(row2Item)
         medicines.append(row3Item)
         medicines.append(row4Item)
+ */
     }
     
+    
     func newMedicine() -> MedicineItem {
-        let item = MedicineItem()
+        let item = MedicineItem(name: "", med_info: "", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
         item.name = "New one"
         medicines.append(item)
         return item
     }
+ 
     
     func move(item: MedicineItem, to index: Int) {
         guard let currentIndex = medicines.firstIndex(of: item) else {
@@ -94,5 +97,15 @@ class MedicineList{
             $0.alarms.count > 0
         }
     }
+    
+    func save() {
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: medicines)
+        UserDefaults.standard.setValue(encodedData, forKey: "medicines")
+    }
+    func load() {
+        guard let encodedData = UserDefaults.standard.value(forKeyPath: "medicines") as? Data else {return }
+        medicines = NSKeyedUnarchiver.unarchiveObject(with: encodedData) as! [MedicineItem]
+    }
+    
  
 }
