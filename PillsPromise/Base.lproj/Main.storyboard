@@ -9,7 +9,7 @@
         <!--Main Table View Controller-->
         <scene sceneID="6WF-nL-1sp">
             <objects>
-                <tableViewController id="c3t-YY-y8l" userLabel="Main Table View Controller" customClass="MainTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="메인" id="c3t-YY-y8l" userLabel="Main Table View Controller" customClass="MainTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wWp-1T-HNZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="-1168" y="-544"/>
         </scene>
-        <!--Main-->
+        <!--메인-->
         <scene sceneID="u7k-FM-iYJ">
             <objects>
-                <navigationController title="Main" automaticallyAdjustsScrollViewInsets="NO" id="dbF-45-Pxb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" title="메인" automaticallyAdjustsScrollViewInsets="NO" id="dbF-45-Pxb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="JrC-1N-8CZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="enK-Lt-tMk">

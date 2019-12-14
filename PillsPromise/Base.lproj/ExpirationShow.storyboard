@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ESn-Au-X6Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ESn-Au-X6Z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Expiration Show Table View Controller-->
         <scene sceneID="Bn0-b2-Lqf">
             <objects>
-                <tableViewController title="Expiration" id="9vL-Mh-53B" userLabel="Expiration Show Table View Controller" customClass="ExpirationShowTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="유통기한" id="9vL-Mh-53B" userLabel="Expiration Show Table View Controller" customClass="ExpirationShowTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="35" sectionFooterHeight="35" id="CWB-sL-AFb" userLabel="Expiration Show Table View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="9vL-Mh-53B" id="8eG-Uu-VkM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="uoX-cA-XJ4"/>
+                    <navigationItem key="navigationItem" title="유통기한" id="uoX-cA-XJ4"/>
                     <connections>
                         <outlet property="expirationShowTableView" destination="CWB-sL-AFb" id="Qt4-eK-9Iv"/>
                     </connections>
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="78.348214285714278"/>
         </scene>
-        <!--Expiration-->
+        <!--유통기한-->
         <scene sceneID="EsB-31-Ba8">
             <objects>
-                <navigationController title="Expiration" automaticallyAdjustsScrollViewInsets="NO" id="ESn-Au-X6Z" sceneMemberID="viewController">
+                <navigationController title="유통기한" automaticallyAdjustsScrollViewInsets="NO" id="ESn-Au-X6Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GnD-e0-utP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

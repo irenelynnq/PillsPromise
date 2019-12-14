@@ -12,6 +12,9 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.items![0].title = "알람"
+        self.tabBar.items![1].title = "메인"
+        self.tabBar.items![2].title = "유통기한"
 
         self.selectedIndex = 1
     }

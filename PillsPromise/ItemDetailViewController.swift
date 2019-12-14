@@ -59,7 +59,7 @@ class ItemDetailViewController: UITableViewController {
         picker.delegate = self
         
         if let item = itemToEdit {
-            title = "Edit Item"
+            title = "약 편집"
             textfield_name.text = item.name
             textfield_med_info.text = item.med_info
             textfield_take_info.text = item.take_info

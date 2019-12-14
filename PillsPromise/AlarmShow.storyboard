@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Alarm-->
+        <!--알람-->
         <scene sceneID="RjR-Ie-9CD">
             <objects>
-                <tableViewController title="Alarm" id="4fY-gN-FWx" customClass="AlarmTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="알람" id="4fY-gN-FWx" customClass="AlarmTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mum-14-Fkm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="7yv-XO-qms" id="ZBp-rw-Fbi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="약쏙" id="7yv-XO-qms">
+                    <navigationItem key="navigationItem" title="알람" id="7yv-XO-qms">
                         <barButtonItem key="rightBarButtonItem" title="Delete" id="6P1-5j-fSf">
                             <connections>
                                 <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="Hmp-jf-0MS"/>
@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="1741" y="130"/>
         </scene>
-        <!--Alarm-->
+        <!--알람-->
         <scene sceneID="eQd-b5-8Zg">
             <objects>
-                <navigationController title="Alarm" automaticallyAdjustsScrollViewInsets="NO" id="vxc-KQ-dct" sceneMemberID="viewController">
+                <navigationController title="알람" automaticallyAdjustsScrollViewInsets="NO" id="vxc-KQ-dct" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLe-np-aC2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

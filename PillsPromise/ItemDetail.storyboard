@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BKe-jA-eWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BKe-jA-eWw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--약 추가-->
         <scene sceneID="BIm-JK-u2y">
             <objects>
                 <tableViewController storyboardIdentifier="ItemDetailViewController" id="BKe-jA-eWw" customClass="ItemDetailViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,7 +342,7 @@
                             <outlet property="delegate" destination="BKe-jA-eWw" id="AZb-cT-vFl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Item" id="866-qZ-dRh">
+                    <navigationItem key="navigationItem" title="약 추가" id="866-qZ-dRh">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="IY9-kp-OnQ">
                             <connections>
                                 <action selector="done:" destination="BKe-jA-eWw" id="5fi-sl-UMp"/>
@@ -375,14 +375,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ItemDetailAlarm" id="Yv4-h5-cRM" customClass="ItemDetailAlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="52"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="52.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yv4-h5-cRM" id="w2k-ha-fix">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-3p-Fzi">
-                                            <rect key="frame" x="28" y="15.5" width="307" height="21"/>
+                                            <rect key="frame" x="28" y="15.5" width="307" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
