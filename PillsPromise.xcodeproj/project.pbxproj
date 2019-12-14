@@ -135,7 +135,6 @@
 			children = (
 				AC536568237E7C5200A4329C /* AppDelegate.swift */,
 				AC53656A237E7C5200A4329C /* SceneDelegate.swift */,
-				AC53656E237E7C5200A4329C /* Main.storyboard */,
 				AC4F33082384F6E300799AFB /* ItemDetail.storyboard */,
 				AC4F330C2384F92400799AFB /* AlarmShow.storyboard */,
 				722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */,
@@ -146,6 +145,7 @@
 				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
 				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
 				AC55603C2381195500C32716 /* ItemDetailViewController.swift */,
+				AC53656E237E7C5200A4329C /* Main.storyboard */,
 				AC5201A3238ACD4200E6F42E /* DatePickerExpirationViewController.swift */,
 				AC5201A5238AE25A00E6F42E /* ItemDetailAlarmTableViewController.swift */,
 				AC5201A7238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift */,

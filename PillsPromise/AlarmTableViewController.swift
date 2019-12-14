@@ -1,4 +1,6 @@
 import UIKit
+import UserNotifications
+
 
 class AlarmTableViewController: UITableViewController {
     
@@ -71,6 +73,12 @@ class AlarmTableViewController: UITableViewController {
             for indexPath in selectedRows {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
+            for item in items {
+                var id = item.name
+                id.append("_alarm")
+                center.removePendingNotificationRequests(withIdentifiers: [id])
+                center.removeDeliveredNotifications(withIdentifiers: [id])
+            }
             medicineList.removeAlarms(items: items)
             alarmTableView.beginUpdates()
             alarmTableView.deleteRows(at: selectedRows, with: .automatic)
@@ -89,6 +97,10 @@ class AlarmTableViewController: UITableViewController {
         let item = medicines_HavingAlarms[indexPath.row]
         
         medicineList.removeAlarms(items: [item])
+        var id = item.name
+        id.append("_alarm")
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)

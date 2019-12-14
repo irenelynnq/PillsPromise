@@ -30,9 +30,9 @@
             filePath = "PillsPromise/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "openCamera()"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "done(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -169,9 +169,9 @@
             filePath = "PillsPromise/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "openLibrary()"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "done(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,9 +185,9 @@
             filePath = "PillsPromise/ItemDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "openCamera()"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "done(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -251,7 +251,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "deleteExpirationDate()"
+            landmarkName = "loadExpirationDate()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -265,10 +265,58 @@
             filePath = "PillsPromise/MainTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5A27DAF-1448-45E5-ABF0-BC7347E99C6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PillsPromise/ItemDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5A27DAF-1448-45E5-ABF0-BC7347E99C6C - 5349841b905693ba"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PillsPromise.ItemDetailViewController.done(Any) -&gt; ()"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "10742">
+               </Location>
+               <Location
+                  uuid = "D5A27DAF-1448-45E5-ABF0-BC7347E99C6C - a9d58b2de43fa73f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PillsPromise.ItemDetailViewController.done(Any) -&gt; ()"
+                  moduleName = "PillsPromise"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guest/Desktop/%E1%84%92%E1%85%A8%E1%84%85%E1%85%B5%E1%86%AB/%E1%84%8B%E1%85%B5%E1%86%AB%E1%84%91%E1%85%B3%E1%84%86%E1%85%B5%E1%86%BC/PillsPromise/PillsPromise/ItemDetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

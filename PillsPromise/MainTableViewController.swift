@@ -33,8 +33,8 @@ class MainTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow,Error in })
-        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) {(didAllow, Error )in }
     }
     
     deinit {
@@ -80,11 +80,22 @@ class MainTableViewController: UITableViewController {
             for indexPath in selectedRows {
                 items.append(medicineList.medicines[indexPath.row])
             }
+            for item in items {
+                var id = item.name
+                id.append("_alarm")
+                center.removePendingNotificationRequests(withIdentifiers: [id])
+                center.removeDeliveredNotifications(withIdentifiers: [id])
+                id = item.name
+                id.append("_exp")
+                center.removePendingNotificationRequests(withIdentifiers: [id])
+                center.removeDeliveredNotifications(withIdentifiers: [id])
+            }
             medicineList.remove(items: items)
             mainTableView.beginUpdates()
             mainTableView.deleteRows(at: selectedRows, with: .automatic)
             mainTableView.endUpdates()
             respondToPostNotification(self)
+            
         }
     }
     
@@ -154,6 +165,15 @@ extension MainTableViewController {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         /* swipe delete */
+        let item = medicineList.medicines[indexPath.row]
+        var id = item.name
+        id.append("_alarm")
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
+        id = item.name
+        id.append("_exp")
+        center.removePendingNotificationRequests(withIdentifiers: [id])
+        center.removeDeliveredNotifications(withIdentifiers: [id])
         medicineList.medicines.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
