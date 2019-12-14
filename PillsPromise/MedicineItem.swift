@@ -88,7 +88,7 @@ class MedicineItem: NSObject, NSCoding {
     var image: UIImage? = nil
     
     func deleteAlarmNotifications(){
-        for index in 0...alarms.count {
+        for index in 0..<alarms.count {
             var id = self.name
             id.append("_alarm")
             id.append(String(index))
@@ -97,15 +97,53 @@ class MedicineItem: NSObject, NSCoding {
         }
     }
     
-    func deleteExpNotifications(){
+    func deleteExpNotification(){
         var id = self.name
         id.append("_exp")
         center.removePendingNotificationRequests(withIdentifiers: [id])
         center.removeDeliveredNotifications(withIdentifiers: [id])
     }
     
-    func setNotifications(){
-        
+    func setAlarmNotifications(){
+        for index in 0..<self.alarms.count {
+            let alarm = alarms[index]
+            let content = UNMutableNotificationContent()
+            content.title = "약 먹을 시간이에요"
+            content.subtitle = self.name
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .none
+            dateformatter.timeStyle = .short
+            content.body = dateformatter.string(from: alarm)
+            let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: alarm)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+            var identifier = self.name
+            identifier.append("_alarm")
+            identifier.append(String(index))
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: {(error) in if let error = error {
+                print(error)
+                }})
+        }
+    }
+    
+    func setExpNotification(){
+        if let date_exp = self.date_expiration {
+            let content = UNMutableNotificationContent()
+            content.title = "약의 유통기한이 다 되었어요"
+            content.subtitle = self.name
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = .long
+            dateformatter.timeStyle = .none
+            content.body = dateformatter.string(from: date_exp)
+            let triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date_exp)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+            var identifier = self.name
+            identifier.append("_exp")
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: {(error) in if let error = error {
+                print(error)
+                }})
+        }
     }
     
     func deleteAlarms(){

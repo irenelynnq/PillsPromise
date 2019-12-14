@@ -83,7 +83,7 @@ class MainTableViewController: UITableViewController {
             }
             for item in items {
                 item.deleteAlarmNotifications()
-                item.deleteExpNotifications()
+                item.deleteExpNotification()
             }
             medicineList.remove(items: items)
             mainTableView.beginUpdates()
@@ -161,14 +161,8 @@ extension MainTableViewController {
                    forRowAt indexPath: IndexPath){
         /* swipe delete */
         let item = medicineList.medicines[indexPath.row]
-        var id = item.name
-        id.append("_alarm")
-        center.removePendingNotificationRequests(withIdentifiers: [id])
-        center.removeDeliveredNotifications(withIdentifiers: [id])
-        id = item.name
-        id.append("_exp")
-        center.removePendingNotificationRequests(withIdentifiers: [id])
-        center.removeDeliveredNotifications(withIdentifiers: [id])
+        item.deleteAlarmNotifications()
+        item.deleteExpNotification()
         medicineList.medicines.remove(at: indexPath.row)
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)

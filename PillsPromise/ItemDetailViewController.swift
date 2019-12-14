@@ -130,52 +130,17 @@ class ItemDetailViewController: UITableViewController {
             if let text_other_info = textfield_other_info.text {
                 item.other_info = text_other_info
             }
+            item.deleteAlarmNotifications()
+            item.deleteExpNotification()
+            
             item.date_expiration = temp_date_expiration
             item.alarms = temp_alarms
             item.image = imageView.image
-            delegate?.itemDetailViewController(self, didFinishEditing: item)
-            var id = item.name
-            id.append("_alarm")
-            center.removePendingNotificationRequests(withIdentifiers: [id])
-            center.removeDeliveredNotifications(withIdentifiers: [id])
-            id = item.name
-            id.append("_exp")
-            center.removePendingNotificationRequests(withIdentifiers: [id])
-            center.removeDeliveredNotifications(withIdentifiers: [id])
             
-            for alarm in item.alarms {
-                let content = UNMutableNotificationContent()
-                content.title = "약 먹을 시간이에요"
-                content.subtitle = item.name
-                let dateformatter = DateFormatter()
-                dateformatter.dateStyle = .none
-                dateformatter.timeStyle = .short
-                content.body = dateformatter.string(from: alarm)
-                let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: alarm)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-                var identifier = item.name
-                identifier.append("_alarm")
-                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                center.add(request, withCompletionHandler: {(error) in if let error = error {
-                    print(error)
-                    }})
-            }
-            if let date_exp = item.date_expiration {
-                let content = UNMutableNotificationContent()
-                content.title = "약의 유통기한이 다 되었어요"
-                content.subtitle = item.name
-                let dateformatter = DateFormatter()
-                dateformatter.dateStyle = .long
-                dateformatter.timeStyle = .none
-                content.body = dateformatter.string(from: date_exp)
-                let triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date_exp)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-                let identifier = item.name
-                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                center.add(request, withCompletionHandler: {(error) in if let error = error {
-                    print(error)
-                    }})
-            }
+            item.setAlarmNotifications()
+            item.setExpNotification()
+            
+            delegate?.itemDetailViewController(self, didFinishEditing: item)
             
         } else {
             if let item = medicineList?.newMedicine() {
@@ -191,44 +156,13 @@ class ItemDetailViewController: UITableViewController {
                 if let text_other_info = textfield_other_info.text {
                     item.other_info = text_other_info
                 }
+                
                 item.date_expiration = temp_date_expiration
                 item.alarms = temp_alarms
+                item.setAlarmNotifications()
+                item.setExpNotification()
                 item.image = imageView.image
                 delegate?.itemDetailViewController(self, didFinishAdding: item)
-                for alarm in item.alarms {
-                    let content = UNMutableNotificationContent()
-                    content.title = "약 먹을 시간이에요"
-                    content.subtitle = item.name
-                    let dateformatter = DateFormatter()
-                    dateformatter.dateStyle = .none
-                    dateformatter.timeStyle = .short
-                    content.body = dateformatter.string(from: alarm)
-                    let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: alarm)
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-                    var identifier = item.name
-                    identifier.append("_alarm")
-                    let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                    center.add(request, withCompletionHandler: {(error) in if let error = error {
-                        print(error)
-                        }})
-                }
-                if let date_exp = item.date_expiration {
-                    let content = UNMutableNotificationContent()
-                    content.title = "약의 유통기한이 다 되었어요"
-                    content.subtitle = item.name
-                    let dateformatter = DateFormatter()
-                    dateformatter.dateStyle = .long
-                    dateformatter.timeStyle = .none
-                    content.body = dateformatter.string(from: date_exp)
-                    let triggerDate = Calendar.current.dateComponents([.year, .month, .day], from: date_exp)
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-                    var identifier = item.name
-                    identifier.append("_exp")
-                    let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                    center.add(request, withCompletionHandler: {(error) in if let error = error {
-                        print(error)
-                        }})
-                }
                 
             }
             

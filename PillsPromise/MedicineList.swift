@@ -13,23 +13,15 @@ class MedicineList{
     var medicines: [MedicineItem] = []
     
     init() {
-        /*
-        let row0Item = MedicineItem()
-        let row1Item = MedicineItem()
-        let row2Item = MedicineItem()
-        let row3Item = MedicineItem()
-        let row4Item = MedicineItem()
-        
-        row0Item.name = "후시딘"
-        row0Item.med_info = "연고"
-        row1Item.name = "마데카솔"
-        row1Item.med_info = "연고"
-        row2Item.name = "뽀로로밴드"
-        row2Item.med_info = "상처났을 때"
-        row3Item.name = "타이레놀"
-        row3Item.med_info = "진통제"
-        row4Item.name = "지르텍"
-        row4Item.med_info = "알레르기약"
+        /* 어플리케이션을 맨 처음에 실행했을 때 나타나는 더미 데이터.
+         더미 데이터로 초기화를 원한다면 simulator - hardware - erase all content and settings
+         이후로는 사용자 설정이 저장됨
+         */
+        let row0Item = MedicineItem(name: "후시딘", med_info: "연고", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
+        let row1Item = MedicineItem(name: "마데카솔", med_info: "연고", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
+        let row2Item = MedicineItem(name: "뽀로로밴드", med_info: "상처났을 때", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
+        let row3Item = MedicineItem(name: "타이레놀", med_info: "진통제", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
+        let row4Item = MedicineItem(name: "지르텍", med_info: "알레르기약", date_expiration: nil, take_info: "", other_info: "", alarms: [], image: nil)
         
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier:"ko_KR")
@@ -58,7 +50,7 @@ class MedicineList{
         medicines.append(row2Item)
         medicines.append(row3Item)
         medicines.append(row4Item)
- */
+ 
     }
     
     

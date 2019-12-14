@@ -74,10 +74,7 @@ class AlarmTableViewController: UITableViewController {
                 items.append(medicineList.listOfHavingAlarms()[indexPath.row])
             }
             for item in items {
-                var id = item.name
-                id.append("_alarm")
-                center.removePendingNotificationRequests(withIdentifiers: [id])
-                center.removeDeliveredNotifications(withIdentifiers: [id])
+                item.deleteAlarmNotifications()
             }
             medicineList.removeAlarms(items: items)
             alarmTableView.beginUpdates()
@@ -95,12 +92,8 @@ class AlarmTableViewController: UITableViewController {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath){
         let item = medicines_HavingAlarms[indexPath.row]
-        
+        item.deleteAlarmNotifications()
         medicineList.removeAlarms(items: [item])
-        var id = item.name
-        id.append("_alarm")
-        center.removePendingNotificationRequests(withIdentifiers: [id])
-        center.removeDeliveredNotifications(withIdentifiers: [id])
         
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
@@ -175,28 +168,9 @@ extension AlarmTableViewController: ItemDetailViewControllerDelegate {
 extension AlarmTableViewController: ItemDetailAlarmTableViewControllerDelegate {
     func itemDetailAlarmTableViewController(_ controller: ItemDetailAlarmTableViewController, didFinishEditing alarms: [Date]) {
         if let item = selectedItemForEdit {
+            item.deleteAlarmNotifications()
             item.alarms = alarms
-            var id = item.name
-            id.append("_alarm")
-            center.removePendingNotificationRequests(withIdentifiers: [id])
-            center.removeDeliveredNotifications(withIdentifiers: [id])
-            for alarm in item.alarms {
-                let content = UNMutableNotificationContent()
-                content.title = "약 먹을 시간이에요"
-                content.subtitle = item.name
-                let dateformatter = DateFormatter()
-                dateformatter.dateStyle = .none
-                dateformatter.timeStyle = .short
-                content.body = dateformatter.string(from: alarm)
-                let triggerDaily = Calendar.current.dateComponents([.hour, .minute], from: alarm)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
-                var identifier = item.name
-                identifier.append("_alarm")
-                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                center.add(request, withCompletionHandler: {(error) in if let error = error {
-                    print(error)
-                    }})
-            }
+            item.setAlarmNotifications()
         }
         
         selectedItemForEdit = nil
