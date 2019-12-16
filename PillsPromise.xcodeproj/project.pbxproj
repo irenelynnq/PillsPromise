@@ -25,13 +25,14 @@
 		AC536575237E7C5400A4329C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC536573237E7C5400A4329C /* LaunchScreen.storyboard */; };
 		AC536580237E7C5500A4329C /* PillsPromiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53657F237E7C5500A4329C /* PillsPromiseTests.swift */; };
 		AC53658B237E7C5500A4329C /* PillsPromiseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */; };
-		AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536598237E8BD800A4329C /* MainTableViewController.swift */; };
+		AC536599237E8BD800A4329C /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC536598237E8BD800A4329C /* MainCollectionViewController.swift */; };
 		AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53659E237E8EA800A4329C /* MedicineItem.swift */; };
 		AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5365A0237E8EC900A4329C /* MedicineList.swift */; };
 		AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55603C2381195500C32716 /* ItemDetailViewController.swift */; };
 		AC6EB501238D765100D214D0 /* SingletonMedicineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */; };
 		AC6EB503238D791E00D214D0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6EB502238D791E00D214D0 /* TabBarViewController.swift */; };
-		ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC814E2381AED400E55287 /* MainTableViewCell.swift */; };
+		ACBC814F2381AED400E55287 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC814E2381AED400E55287 /* MainCollectionViewCell.swift */; };
+		C7C63C0C23A62AF500193DA4 /* MainCollectionViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C63C0B23A62AF500193DA4 /* MainCollectionViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,13 +77,14 @@
 		AC536586237E7C5500A4329C /* PillsPromiseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PillsPromiseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC53658A237E7C5500A4329C /* PillsPromiseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsPromiseUITests.swift; sourceTree = "<group>"; };
 		AC53658C237E7C5500A4329C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC536598237E8BD800A4329C /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		AC536598237E8BD800A4329C /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		AC53659E237E8EA800A4329C /* MedicineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineItem.swift; sourceTree = "<group>"; };
 		AC5365A0237E8EC900A4329C /* MedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineList.swift; sourceTree = "<group>"; };
 		AC55603C2381195500C32716 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonMedicineList.swift; sourceTree = "<group>"; };
 		AC6EB502238D791E00D214D0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		ACBC814E2381AED400E55287 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		ACBC814E2381AED400E55287 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7C63C0B23A62AF500193DA4 /* MainCollectionViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,27 +137,28 @@
 			children = (
 				AC536568237E7C5200A4329C /* AppDelegate.swift */,
 				AC53656A237E7C5200A4329C /* SceneDelegate.swift */,
+				AC536571237E7C5400A4329C /* Assets.xcassets */,
+				AC536576237E7C5400A4329C /* Info.plist */,
+				AC536573237E7C5400A4329C /* LaunchScreen.storyboard */,
 				AC53656E237E7C5200A4329C /* Main.storyboard */,
 				AC4F33082384F6E300799AFB /* ItemDetail.storyboard */,
 				AC4F330C2384F92400799AFB /* AlarmShow.storyboard */,
 				2F0A03D1239170DB0054C298 /* ExpirationShow.storyboard */,
-				722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */,
-				722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */,
-				2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */,
-				2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */,
-				ACBC814E2381AED400E55287 /* MainTableViewCell.swift */,
-				AC536598237E8BD800A4329C /* MainTableViewController.swift */,
-				AC55603C2381195500C32716 /* ItemDetailViewController.swift */,
-				AC5201A3238ACD4200E6F42E /* DatePickerExpirationViewController.swift */,
+				AC5201A9238AEC3B00E6F42E /* DatePickerAlarmViewController.swift */,
 				AC5201A5238AE25A00E6F42E /* ItemDetailAlarmTableViewController.swift */,
 				AC5201A7238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift */,
-				AC5201A9238AEC3B00E6F42E /* DatePickerAlarmViewController.swift */,
+				722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */,
+				722C20D4238BE3CB00ADD6E7 /* AlarmTableViewCell.swift */,
+				AC5201A3238ACD4200E6F42E /* DatePickerExpirationViewController.swift */,
+				2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */,
+				2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */,
 				AC6EB502238D791E00D214D0 /* TabBarViewController.swift */,
-				AC536571237E7C5400A4329C /* Assets.xcassets */,
-				AC536573237E7C5400A4329C /* LaunchScreen.storyboard */,
-				AC536576237E7C5400A4329C /* Info.plist */,
-				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
 				AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */,
+				C7C63C0B23A62AF500193DA4 /* MainCollectionViewController2.swift */,
+				ACBC814E2381AED400E55287 /* MainCollectionViewCell.swift */,
+				AC536598237E8BD800A4329C /* MainCollectionViewController.swift */,
+				AC55603C2381195500C32716 /* ItemDetailViewController.swift */,
+				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
 				AC5365A0237E8EC900A4329C /* MedicineList.swift */,
 			);
 			path = PillsPromise;
@@ -313,19 +316,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACBC814F2381AED400E55287 /* MainTableViewCell.swift in Sources */,
+				ACBC814F2381AED400E55287 /* MainCollectionViewCell.swift in Sources */,
 				722C20D3238BE3BE00ADD6E7 /* AlarmTableViewController.swift in Sources */,
 				AC5201A4238ACD4200E6F42E /* DatePickerExpirationViewController.swift in Sources */,
 				AC536569237E7C5200A4329C /* AppDelegate.swift in Sources */,
 				AC5201AA238AEC3B00E6F42E /* DatePickerAlarmViewController.swift in Sources */,
 				AC6EB501238D765100D214D0 /* SingletonMedicineList.swift in Sources */,
 				2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */,
-				AC536599237E8BD800A4329C /* MainTableViewController.swift in Sources */,
+				AC536599237E8BD800A4329C /* MainCollectionViewController.swift in Sources */,
 				AC53659F237E8EA800A4329C /* MedicineItem.swift in Sources */,
 				AC5201A8238AE28C00E6F42E /* ItemDetailAlarmTableViewCell.swift in Sources */,
 				AC5201A6238AE25A00E6F42E /* ItemDetailAlarmTableViewController.swift in Sources */,
 				AC55603D2381195500C32716 /* ItemDetailViewController.swift in Sources */,
 				AC53656B237E7C5200A4329C /* SceneDelegate.swift in Sources */,
+				C7C63C0C23A62AF500193DA4 /* MainCollectionViewController2.swift in Sources */,
 				722C20D5238BE3CB00ADD6E7 /* AlarmTableViewCell.swift in Sources */,
 				AC6EB503238D791E00D214D0 /* TabBarViewController.swift in Sources */,
 				AC5365A1237E8EC900A4329C /* MedicineList.swift in Sources */,

@@ -8,28 +8,25 @@
 
 import UIKit
 import UserNotifications
-
-class MainTableViewController: UITableViewController {
-    @IBOutlet weak var mainTableView: UITableView!
-    
+class MainCollectionViewController: UICollectionViewController {
+    @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     var medicineList: MedicineList {
         return SingletoneMedicineList.shared.medicineList
     }
     
-    /*
-    required init?(coder: NSCoder) {
+    /* required init?(coder: NSCoder) {
         medicineList = MedicineList()
         super.init(coder: coder)
-    }
- */
+    } */
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
-        mainTableView.allowsMultipleSelectionDuringEditing = true
-        mainTableView.allowsSelectionDuringEditing = true
+//        mainCollectionView.allowsMultipleSelectionDuringEditing = true
+//        mainCollectionView.allowsSelectionDuringEditing = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
         
@@ -46,7 +43,7 @@ class MainTableViewController: UITableViewController {
     }
     
     @objc func receiveModifiedNotification(_ notification: Notification) {
-        mainTableView.reloadData()
+        mainCollectionView.reloadData()
         SingletoneMedicineList.shared.medicineList.save()
         print("main hear!")
     }
@@ -62,11 +59,11 @@ class MainTableViewController: UITableViewController {
     }
  */
     
-    func goItemDetail(_ sender: UITableViewCell) {
+    func goItemDetail(_ sender: UICollectionViewCell) {
         if let itemDetailViewController = UIStoryboard(name: "ItemDetail", bundle: nil).instantiateViewController(identifier: "ItemDetailViewController") as? ItemDetailViewController
         {
-            if let cell = sender as? UITableViewCell,
-                let indexPath = mainTableView.indexPath(for: cell) {
+            if let cell = sender as? UICollectionViewCell,
+                let indexPath = mainCollectionView.indexPath(for: cell) {
                 let item = medicineList.medicines[indexPath.row]
                 itemDetailViewController.itemToEdit = item
                 itemDetailViewController.delegate = self
@@ -75,8 +72,9 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    
     @IBAction func deleteItems(_ sender: Any) {
-        if let selectedRows = mainTableView.indexPathsForSelectedRows {
+        if let selectedRows = mainCollectionView.indexPathsForSelectedItems {
             var items = [MedicineItem]()
             for indexPath in selectedRows {
                 items.append(medicineList.medicines[indexPath.row])
@@ -86,9 +84,10 @@ class MainTableViewController: UITableViewController {
                 item.deleteExpNotification()
             }
             medicineList.remove(items: items)
-            mainTableView.beginUpdates()
-            mainTableView.deleteRows(at: selectedRows, with: .automatic)
-            mainTableView.endUpdates()
+//            mainCollectionView.beginUpdates()
+//            mainCollectionView.deleteRows(at: selectedRows, with:.automatic)
+//            mainCollectionView.endUpdates()
+            mainCollectionView.reloadData()
             respondToPostNotification(self)
             
         }
@@ -107,8 +106,8 @@ class MainTableViewController: UITableViewController {
             }
         } else if segue.identifier == "EditItemSegue" {
             if let itemDetailViewController = segue.destination as? ItemDetailViewController {
-                if let cell = sender as? UITableViewCell,
-                    let indexPath = mainTableView.indexPath(for: cell) {
+                if let cell = sender as? UICollectionViewCell,
+                    let indexPath = mainCollectionView.indexPath(for: cell) {
                     let item = medicineList.medicines[indexPath.row]
                     itemDetailViewController.itemToEdit = item
                     itemDetailViewController.delegate = self
@@ -119,17 +118,22 @@ class MainTableViewController: UITableViewController {
 
 }
 
-extension MainTableViewController {
+extension MainCollectionViewController {
     //UITableViewDelegate, UITableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return medicineList.medicines.count
     }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         if !(super.isEditing) {
-            goItemDetail(mainTableView.cellForRow(at: indexPath)!)
+            goItemDetail(mainCollectionView.cellForItem(at: indexPath)!)
+        }
+        if !isEditing {
+            deleteButton.isEnabled = false
+        } else {
+            deleteButton.isEnabled = true
         }
         /*
         else if super.isEditing {
@@ -146,9 +150,15 @@ extension MainTableViewController {
  */
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems, selectedItems.count == 0 {
+            deleteButton.isEnabled = false
+        }
+    }
+    
+    override func collectionView(_ tableView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         /* cell을 tableView에 띄워 주는 함수 */
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MedicineItem", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MedicineItem", for: indexPath)
         
         let item = medicineList.medicines[indexPath.row]
         configureText(for: cell, with: item)
@@ -156,29 +166,31 @@ extension MainTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath){
-        /* swipe delete */
-        let item = medicineList.medicines[indexPath.row]
-        item.deleteAlarmNotifications()
-        item.deleteExpNotification()
-        medicineList.medicines.remove(at: indexPath.row)
-        let indexPaths = [indexPath]
-        tableView.deleteRows(at: indexPaths, with: .automatic)
-        respondToPostNotification(self)
-    }
+    // CollectionView에서 delete하는 reference로 변경
     
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//    override func collectionView(_ collectionView: UICollectionView,
+//                   commit editingStyle: UITableViewCell.EditingStyle,
+//                   forRowAt indexPath: IndexPath){
+//        /* swipe delete */
+//        let item = medicineList.medicines[indexPath.row]
+//        item.deleteAlarmNotifications()
+//        item.deleteExpNotification()
+//        medicineList.medicines.remove(at: indexPath.row)
+//        let indexPaths = [indexPath]
+//        collectionView.deleteRows(at: indexPaths, with: .automatic)
+//        respondToPostNotification(self)
+//    }
+    
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         /* moving */
         medicineList.move(item: medicineList.medicines[sourceIndexPath.row], to: destinationIndexPath.row)
-        tableView.reloadData()
+        collectionView.reloadData()
         respondToPostNotification(self)
     }
     
-    func configureText(for cell: UITableViewCell, with item: MedicineItem) {
+    func configureText(for cell: UICollectionViewCell, with item: MedicineItem) {
         /* cell의 내용을 출력하는 함수 */
-        if let medicineCell = cell as? MainTableViewCell {
+        if let medicineCell = cell as? MainCollectionViewCell {
             medicineCell.medicineTextLabel.text = item.name
             medicineCell.medicineExpirationLabel.text = item.date_expiration_string
             medicineCell.medicineInfoLabel.text = item.med_info
@@ -186,16 +198,39 @@ extension MainTableViewController {
         }
     }
     
+        // 사이즈
+    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+          let collectionViewCellWithd = collectionView.frame.width / 3 - 1
+    
+            return CGSize(width: collectionViewCellWithd, height: collectionViewCellWithd)
+        }
+    
+    
+        //위아래 라인 간격
+    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    
+            return 1
+        }
+    
+        //옆 라인 간격
+    
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    
+            return 1
+        }
 
 }
 
-extension MainTableViewController: ItemDetailViewControllerDelegate {
+extension MainCollectionViewController: ItemDetailViewControllerDelegate {
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: MedicineItem){
-        mainTableView.reloadData()
+        mainCollectionView.reloadData()
         respondToPostNotification(self)
     }
     func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: MedicineItem){
-        mainTableView.reloadData()
+        mainCollectionView.reloadData()
         respondToPostNotification(self)
     }
 }
