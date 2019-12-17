@@ -28,10 +28,13 @@ class ItemDetailViewController: UITableViewController {
     @IBOutlet weak var label_date_expiration: UILabel!
     @IBOutlet weak var textfield_other_info: UITextField!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
+    
     @IBOutlet weak var deleteExpirationDateButton: UIButton!
+    
     @IBOutlet weak var imageView: UIImageView!
     
     let picker = UIImagePickerController()
+    
     @IBAction func imageAdd(_ sender: Any) {
         let alert = UIAlertController(title: "사진 편집", message: "약 사진을 편집합니다", preferredStyle: .actionSheet)
         let library = UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
