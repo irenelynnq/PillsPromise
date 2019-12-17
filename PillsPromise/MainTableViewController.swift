@@ -26,6 +26,8 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         mainTableView.allowsMultipleSelectionDuringEditing = true
@@ -35,6 +37,7 @@ class MainTableViewController: UITableViewController {
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) {(didAllow, Error )in }
+        
     }
     
     deinit {

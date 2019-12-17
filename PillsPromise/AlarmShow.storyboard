@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxc-KQ-dct">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxc-KQ-dct">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunpenB.otf">
+            <string>NanumBarunpen-Bold</string>
+        </array>
+        <array key="NanumBarunpenR.otf">
+            <string>NanumBarunpen</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--알람-->
         <scene sceneID="RjR-Ie-9CD">
@@ -14,39 +22,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarms" id="7g6-tj-Aho">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="AlarmMedicineItem" id="R9b-0F-PdN" customClass="AlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="80.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="AlarmMedicineItem" rowHeight="100" id="R9b-0F-PdN" customClass="AlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9b-0F-PdN" id="ADi-44-HiE">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="80.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6i6-hz-b4P">
-                                            <rect key="frame" x="20" y="45.5" width="42" height="21"/>
+                                            <rect key="frame" x="20" y="59" width="323" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="wQa-2g-t4N"/>
+                                                <constraint firstAttribute="height" constant="21" id="guO-25-pbI"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen-Bold" family="NanumBarunpen" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKL-Tj-saG">
-                                            <rect key="frame" x="20" y="16" width="47" height="23.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <rect key="frame" x="20" y="19" width="323" height="23"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="leading" secondItem="ADi-44-HiE" secondAttribute="leadingMargin" id="GKQ-3x-ECC"/>
-                                        <constraint firstItem="6i6-hz-b4P" firstAttribute="top" secondItem="bKL-Tj-saG" secondAttribute="bottom" constant="6" id="VPa-RP-KxR"/>
-                                        <constraint firstItem="6i6-hz-b4P" firstAttribute="top" secondItem="bKL-Tj-saG" secondAttribute="bottom" constant="6" id="VWj-Es-SwP"/>
-                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="top" secondItem="ADi-44-HiE" secondAttribute="topMargin" constant="5" id="XT2-nE-EcG"/>
-                                        <constraint firstItem="6i6-hz-b4P" firstAttribute="leading" secondItem="ADi-44-HiE" secondAttribute="leadingMargin" id="cSA-Qg-spt"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="6i6-hz-b4P" secondAttribute="bottom" constant="3" id="zxg-ld-GDY"/>
+                                        <constraint firstItem="6i6-hz-b4P" firstAttribute="trailing" secondItem="ADi-44-HiE" secondAttribute="trailingMargin" id="N3R-MQ-eDK"/>
+                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="top" secondItem="ADi-44-HiE" secondAttribute="topMargin" constant="8" id="N4P-RW-1u5"/>
+                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="leading" secondItem="ADi-44-HiE" secondAttribute="leadingMargin" id="T6l-xn-U0i"/>
+                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="leading" secondItem="6i6-hz-b4P" secondAttribute="leading" id="em7-vD-gB3"/>
+                                        <constraint firstItem="6i6-hz-b4P" firstAttribute="top" secondItem="bKL-Tj-saG" secondAttribute="bottom" constant="17" id="gfM-OM-fpP"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6i6-hz-b4P" secondAttribute="bottom" constant="9" id="hfs-LH-cDt"/>
+                                        <constraint firstItem="bKL-Tj-saG" firstAttribute="trailing" secondItem="6i6-hz-b4P" secondAttribute="trailing" id="z66-9z-dgP"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="AlarmMedicineTextLabel" destination="bKL-Tj-saG" id="Wpk-jf-bZg"/>
                                     <outlet property="alarmListLabel" destination="6i6-hz-b4P" id="s2c-E2-w9p"/>
@@ -59,8 +73,9 @@
                             <outlet property="delegate" destination="7yv-XO-qms" id="ZBp-rw-Fbi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="알람" id="7yv-XO-qms">
+                    <navigationItem key="navigationItem" title="알람" largeTitleDisplayMode="never" id="7yv-XO-qms">
                         <barButtonItem key="rightBarButtonItem" title="Delete" id="6P1-5j-fSf">
+                            <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="deleteAlarms:" destination="4fY-gN-FWx" id="Hmp-jf-0MS"/>
                             </connections>
@@ -98,7 +113,12 @@
         <scene sceneID="eQd-b5-8Zg">
             <objects>
                 <navigationController title="알람" automaticallyAdjustsScrollViewInsets="NO" id="vxc-KQ-dct" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="알람아이콘흑백" landscapeImage="알람아이콘흑백" selectedImage="알람아이콘" springLoaded="YES" id="EnH-Ww-gjD">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-21"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="15"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLe-np-aC2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -113,4 +133,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarms" width="414" height="50"/>
+        <image name="알람아이콘" width="40" height="39"/>
+        <image name="알람아이콘흑백" width="40" height="39"/>
+    </resources>
+    <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

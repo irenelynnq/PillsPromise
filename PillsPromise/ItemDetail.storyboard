@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BKe-jA-eWw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BKe-jA-eWw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunpenR.otf">
+            <string>NanumBarunpen</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--약 추가-->
         <scene sceneID="BIm-JK-u2y">
@@ -27,7 +32,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-S5-yg3">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -49,7 +54,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGt-EX-ZWI">
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done:" destination="BKe-jA-eWw" eventType="editingDidEndOnExit" id="MKt-zZ-YaF"/>
@@ -74,7 +79,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-j3-IFe">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -96,7 +101,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bI4-3b-bFU">
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
@@ -117,20 +122,26 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유통기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-nx-5zd">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wal-uj-DZH">
                                                     <rect key="frame" x="354" y="4.5" width="30" height="35"/>
-                                                    <state key="normal" title="Edit"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
+                                                    <state key="normal" title="Edit">
+                                                        <color key="titleColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <segue destination="1L2-Jd-huK" kind="presentation" identifier="EditDateExpirationSegue" id="hV4-uf-clE"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dG2-k2-yPe">
-                                                    <rect key="frame" x="279" y="4.5" width="45" height="35"/>
-                                                    <state key="normal" title="Delete"/>
+                                                    <rect key="frame" x="282" y="4.5" width="42" height="35"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="deleteExpirationDate" destination="BKe-jA-eWw" eventType="touchUpInside" id="mBh-C7-EvF"/>
                                                     </connections>
@@ -159,7 +170,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzb-R6-00y">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -181,7 +192,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용방법" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1O-ae-Xya">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -203,7 +214,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O54-CE-AfC">
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
@@ -224,7 +235,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="복용알람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjG-BC-Ngv">
                                                     <rect key="frame" x="30" y="15.5" width="303" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -236,6 +247,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="tjG-BC-Ngv" secondAttribute="bottom" constant="4.5" id="tRT-Xp-m95"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <segue destination="4DR-ON-C5M" kind="show" identifier="AlarmDetailSegue" trigger="accessoryAction" id="aHG-bN-xZf"/>
                                         </connections>
@@ -249,7 +261,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-up-00c">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -271,7 +283,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6P-vC-LIv">
                                                     <rect key="frame" x="20" y="4.5" width="374" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
@@ -292,13 +304,16 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U8-Go-ZAK">
                                                     <rect key="frame" x="30" y="15.5" width="354" height="13"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY5-xt-qcc">
                                                     <rect key="frame" x="346" y="4.5" width="30" height="35"/>
-                                                    <state key="normal" title="Edit"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
+                                                    <state key="normal" title="Edit">
+                                                        <color key="titleColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="imageAdd:" destination="BKe-jA-eWw" eventType="touchUpInside" id="MMv-QU-5U3"/>
                                                     </connections>
@@ -344,6 +359,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="약 추가" id="866-qZ-dRh">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="IY9-kp-OnQ">
+                            <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="done:" destination="BKe-jA-eWw" id="5fi-sl-UMp"/>
                             </connections>
@@ -373,17 +389,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ItemDetailAlarm" id="Yv4-h5-cRM" customClass="ItemDetailAlarmTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="52.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="58.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yv4-h5-cRM" id="w2k-ha-fix">
-                                    <rect key="frame" x="0.0" y="0.0" width="351" height="52.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="351" height="58.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEj-3p-Fzi">
-                                            <rect key="frame" x="28" y="15.5" width="307" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="28" y="15.5" width="307" height="27.5"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -395,6 +414,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="MEj-3p-Fzi" secondAttribute="trailing" constant="8" id="bAN-tj-zQo"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="alarmTextLabel" destination="MEj-3p-Fzi" id="Ust-TD-LHD"/>
                                     <segue destination="cBm-6S-hkB" kind="presentation" identifier="EditAlarmSegue" trigger="accessoryAction" id="GFm-5O-ojp"/>
@@ -409,11 +429,13 @@
                     <navigationItem key="navigationItem" id="h6e-eA-7be">
                         <rightBarButtonItems>
                             <barButtonItem title="Done" id="vHB-M3-IIv">
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="done:" destination="4DR-ON-C5M" id="GWG-o2-t1d"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="pVM-J9-PoV">
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="cBm-6S-hkB" kind="presentation" identifier="AddAlarmSegue" id="h8X-fV-ea2"/>
                                 </connections>
@@ -441,10 +463,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAK-aV-S5m">
-                                <rect key="frame" x="179" y="297" width="56" height="41"/>
+                                <rect key="frame" x="189" y="302" width="41" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Done"/>
+                                <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="22"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="done:" destination="1L2-Jd-huK" eventType="touchUpInside" id="VSY-h1-NU9"/>
                                 </connections>
@@ -515,10 +539,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-n2-rkM">
-                                <rect key="frame" x="179" y="297" width="56" height="41"/>
+                                <rect key="frame" x="189" y="302" width="41" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Done"/>
+                                <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="22"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="done:" destination="cBm-6S-hkB" eventType="touchUpInside" id="nTj-yj-WPd"/>
                                 </connections>
@@ -544,4 +570,5 @@
         <segue reference="GFm-5O-ojp"/>
         <segue reference="aHG-bN-xZf"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

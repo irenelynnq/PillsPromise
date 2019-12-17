@@ -58,6 +58,7 @@ class ExpirationShowTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         NotificationCenter.default.addObserver(self, selector: #selector(receiveModifiedNotification), name: Notification.Name("ModifiedNotification"), object: nil)
     }
     

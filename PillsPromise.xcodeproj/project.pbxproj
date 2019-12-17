@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F0A03CF239170DB0054C298 /* ExpirationShow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0A03D1239170DB0054C298 /* ExpirationShow.storyboard */; };
+		2F0AB1F023A9368B00A13ED9 /* NanumBarunpenR.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0AB1EF23A9368B00A13ED9 /* NanumBarunpenR.otf */; };
+		2F0AB1F423A9389700A13ED9 /* NanumBarunpenB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0AB1F323A9389700A13ED9 /* NanumBarunpenB.otf */; };
 		2FD71C8C238BE03E001CE667 /* ExpirationShowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */; };
 		2FD71C8E238BFDB1001CE667 /* ExpirationShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */; };
 		722C20D3238BE3BE00ADD6E7 /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		2F0A03D0239170DB0054C298 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExpirationShow.storyboard; sourceTree = "<group>"; };
+		2F0AB1EF23A9368B00A13ED9 /* NanumBarunpenR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenR.otf; path = "../../../../../../../Volumes/나눔바른펜 OTF/NanumBarunpenR.otf"; sourceTree = "<group>"; };
+		2F0AB1F323A9389700A13ED9 /* NanumBarunpenB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumBarunpenB.otf; path = "../../../../../../../Volumes/나눔바른펜 OTF/NanumBarunpenB.otf"; sourceTree = "<group>"; };
 		2FD71C8B238BE03E001CE667 /* ExpirationShowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewController.swift; sourceTree = "<group>"; };
 		2FD71C8D238BFDB1001CE667 /* ExpirationShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationShowTableViewCell.swift; sourceTree = "<group>"; };
 		722C20D2238BE3BE00ADD6E7 /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 				AC53659E237E8EA800A4329C /* MedicineItem.swift */,
 				AC6EB500238D765100D214D0 /* SingletonMedicineList.swift */,
 				AC5365A0237E8EC900A4329C /* MedicineList.swift */,
+				2F0AB1EF23A9368B00A13ED9 /* NanumBarunpenR.otf */,
+				2F0AB1F323A9389700A13ED9 /* NanumBarunpenB.otf */,
 			);
 			path = PillsPromise;
 			sourceTree = "<group>";
@@ -288,6 +294,8 @@
 				2F0A03CF239170DB0054C298 /* ExpirationShow.storyboard in Resources */,
 				AC536572237E7C5400A4329C /* Assets.xcassets in Resources */,
 				AC4F33092384F6E300799AFB /* ItemDetail.storyboard in Resources */,
+				2F0AB1F423A9389700A13ED9 /* NanumBarunpenB.otf in Resources */,
+				2F0AB1F023A9368B00A13ED9 /* NanumBarunpenR.otf in Resources */,
 				AC536570237E7C5200A4329C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

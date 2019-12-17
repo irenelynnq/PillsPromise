@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDA-7I-xpq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDA-7I-xpq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunpenB.otf">
+            <string>NanumBarunpen-Bold</string>
+        </array>
+        <array key="NanumBarunpenR.otf">
+            <string>NanumBarunpen</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main Table View Controller-->
         <scene sceneID="6WF-nL-1sp">
@@ -12,56 +20,62 @@
                 <tableViewController title="메인" id="c3t-YY-y8l" userLabel="Main Table View Controller" customClass="MainTableViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wWp-1T-HNZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mypills" id="X9q-p9-NfN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicineItem" rowHeight="150" id="9Dk-lc-Dwn" customClass="MainTableViewCell" customModule="PillsPromise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Dk-lc-Dwn" id="phq-37-IgQ">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-nt-4HE">
-                                            <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="11" width="120" height="120"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="WHz-hV-GQQ"/>
-                                                <constraint firstAttribute="width" constant="50" id="bCd-jD-HhI"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="6ob-Ed-NOH"/>
+                                                <constraint firstAttribute="height" constant="120" id="WHz-hV-GQQ"/>
+                                                <constraint firstAttribute="width" constant="120" id="bCd-jD-HhI"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="jey-RA-Gei"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="약 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-cU-IVY">
-                                            <rect key="frame" x="80" y="11" width="271" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <rect key="frame" x="164" y="11" width="187" height="50"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen-Bold" family="NanumBarunpen" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="사용 기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-CL-mGa">
-                                            <rect key="frame" x="20" y="71" width="363" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="사용 기한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuI-CL-mGa">
+                                            <rect key="frame" x="164" y="71" width="219" height="22"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="20"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약 효능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-DS-zII">
-                                            <rect key="frame" x="20" y="101" width="363" height="26"/>
-                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="24"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="약 효능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICj-DS-zII">
+                                            <rect key="frame" x="164" y="101" width="219" height="30"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunpen" family="NanumBarunpen" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="nbu-cU-IVY" firstAttribute="leading" secondItem="ytf-nt-4HE" secondAttribute="trailing" constant="10" id="7io-RB-OBZ"/>
-                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="leading" secondItem="ytf-nt-4HE" secondAttribute="leading" id="82y-mn-HCh"/>
+                                        <constraint firstItem="nbu-cU-IVY" firstAttribute="leading" secondItem="ytf-nt-4HE" secondAttribute="trailing" constant="24" id="7io-RB-OBZ"/>
+                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="leading" secondItem="ytf-nt-4HE" secondAttribute="leading" constant="144" id="82y-mn-HCh"/>
                                         <constraint firstItem="nbu-cU-IVY" firstAttribute="top" secondItem="ytf-nt-4HE" secondAttribute="top" id="8EM-Pc-3r6"/>
                                         <constraint firstItem="ytf-nt-4HE" firstAttribute="leading" secondItem="phq-37-IgQ" secondAttribute="leadingMargin" id="H5c-tQ-nA5"/>
                                         <constraint firstItem="ICj-DS-zII" firstAttribute="leading" secondItem="VuI-CL-mGa" secondAttribute="leading" id="Ici-7H-z5K"/>
-                                        <constraint firstItem="nbu-cU-IVY" firstAttribute="height" secondItem="ytf-nt-4HE" secondAttribute="height" multiplier="1.38" id="JOY-ro-NQb"/>
-                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="trailing" secondItem="nbu-cU-IVY" secondAttribute="trailing" id="eVH-g8-aCG"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ICj-DS-zII" secondAttribute="bottom" constant="12" id="hO9-NO-3jV"/>
+                                        <constraint firstItem="nbu-cU-IVY" firstAttribute="height" secondItem="ytf-nt-4HE" secondAttribute="height" multiplier="1.38" constant="-115.59999999999999" id="JOY-ro-NQb"/>
+                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="trailing" secondItem="nbu-cU-IVY" secondAttribute="trailing" constant="32" id="eVH-g8-aCG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ICj-DS-zII" secondAttribute="bottom" constant="8" id="hO9-NO-3jV"/>
                                         <constraint firstAttribute="bottom" secondItem="VuI-CL-mGa" secondAttribute="bottom" constant="57" id="hnL-sn-kOm"/>
                                         <constraint firstItem="ytf-nt-4HE" firstAttribute="top" secondItem="phq-37-IgQ" secondAttribute="topMargin" id="jgj-aA-k0f"/>
                                         <constraint firstAttribute="trailing" secondItem="nbu-cU-IVY" secondAttribute="trailing" id="nRT-Xd-I4Y"/>
                                         <constraint firstItem="ICj-DS-zII" firstAttribute="trailing" secondItem="VuI-CL-mGa" secondAttribute="trailing" id="rRq-dL-LRn"/>
-                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="top" secondItem="ytf-nt-4HE" secondAttribute="bottom" constant="10" id="xT6-Kd-fRj"/>
+                                        <constraint firstItem="VuI-CL-mGa" firstAttribute="top" secondItem="ytf-nt-4HE" secondAttribute="bottom" constant="-60" id="xT6-Kd-fRj"/>
                                         <constraint firstItem="ICj-DS-zII" firstAttribute="top" secondItem="VuI-CL-mGa" secondAttribute="bottom" constant="8" id="yjY-n8-wZ5"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -78,21 +92,24 @@
                             <outlet property="delegate" destination="c3t-YY-y8l" id="qF6-8C-3Sb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="약쏙" id="3nZ-5l-Eeh">
+                    <navigationItem key="navigationItem" title="약쏙" largeTitleDisplayMode="never" id="3nZ-5l-Eeh">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Yua-5N-2Jd">
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="addItem:" destination="c3t-YY-y8l" id="k5b-p1-2Xs"/>
                                     <segue destination="Mqi-BO-P3z" kind="show" identifier="AddItemSegue" id="Qo4-Nb-Sex"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Delete" id="Hnz-1w-DJN">
+                                <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="deleteItems:" destination="c3t-YY-y8l" id="p4u-dm-gha"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mainTableView" destination="wWp-1T-HNZ" id="pFH-MW-gCM"/>
                     </connections>
@@ -105,10 +122,11 @@
         <scene sceneID="1Qk-wG-tzD">
             <objects>
                 <tabBarController id="IDA-7I-xpq" customClass="TabBarViewController" customModule="PillsPromise" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xFR-6c-HcF">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="xFR-6c-HcF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="aiM-K1-Vox" kind="relationship" relationship="viewControllers" id="loI-Tx-SqV"/>
@@ -124,7 +142,10 @@
         <scene sceneID="u7k-FM-iYJ">
             <objects>
                 <navigationController storyboardIdentifier="Main" title="메인" automaticallyAdjustsScrollViewInsets="NO" id="dbF-45-Pxb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JrC-1N-8CZ"/>
+                    <tabBarItem key="tabBarItem" title="" image="메인아이콘흑백" landscapeImage="메인아이콘흑백" selectedImage="메인아이콘" springLoaded="YES" id="JrC-1N-8CZ">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-17"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="15"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="enK-Lt-tMk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -143,7 +164,9 @@
         <scene sceneID="TPb-6V-d3e">
             <objects>
                 <viewControllerPlaceholder storyboardName="AlarmShow" id="aiM-K1-Vox" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="55d-Yy-yWA"/>
+                    <tabBarItem key="tabBarItem" title="" image="알람아이콘" landscapeImage="알람아이콘" largeContentSizeImage="알람아이콘" selectedImage="알람아이콘" id="55d-Yy-yWA">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-25"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6df-o4-euZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,7 +176,9 @@
         <scene sceneID="1ap-4c-c0D">
             <objects>
                 <viewControllerPlaceholder storyboardName="ExpirationShow" id="eEa-p9-xmU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Brg-7s-01k"/>
+                    <tabBarItem key="tabBarItem" title="" image="유통기한아이콘" landscapeImage="유통기한아이콘" largeContentSizeImage="유통기한아이콘" selectedImage="유통기한아이콘" id="Brg-7s-01k">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-25"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDt-ts-pl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,4 +271,12 @@
             <point key="canvasLocation" x="1925" y="-544"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mypills" width="414" height="50"/>
+        <image name="메인아이콘" width="40" height="35"/>
+        <image name="메인아이콘흑백" width="40" height="35"/>
+        <image name="알람아이콘" width="40" height="39"/>
+        <image name="유통기한아이콘" width="40" height="36.5"/>
+    </resources>
+    <color key="tintColor" red="0.57380741830000004" green="0.56553578380000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

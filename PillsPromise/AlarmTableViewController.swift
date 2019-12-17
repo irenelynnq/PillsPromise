@@ -22,6 +22,8 @@ class AlarmTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarItem.selectedImage = tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = editButtonItem
         alarmTableView.allowsMultipleSelectionDuringEditing = true
